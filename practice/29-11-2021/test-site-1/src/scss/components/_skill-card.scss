@@ -1,0 +1,19 @@
+@use '../abstracts';
+.skill-card {
+    // @include abstracts.set-breakpoint(900px) {
+    //     padding: 0 4em;
+    // }
+
+    .imagebox > .image {
+        @include abstracts.set-breakpoint(990px) {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .contentbox > .subtitle {
+        margin: 0;
+        padding: 1em;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button data-js-btn>click</button>
+
+    <script>
+        const init = function() {
+            const btn = document.querySelector("[data-js-btn]");
+
+            btn.addEventListener("click", debounce(clicklog, 2000));
+        };
+
+        const clicklog = function() {
+            console.log("clicked");
+        }
+
+        document.addEventListener("DOMContentLoaded", init);
+
+        // debounce - prevents the function to called too soon
+
+        // e.g accidentally double clicked by mistake that will log 2 orders
+
+        // after typing into the text field, the validation works/fired
+        // e.g form validation, search filter post
+
+        // a decorator, accepts a function and adds additional functionality to it
+        const debounce = function(fn, delay) {
+            let id;
+            console.log(`id at immediate load: ${id}`);
+
+            // returns anonymous function
+            return function(...args) {
+                // has different value because of closure
+                console.log(`previous id: ${id}`);
+
+                // if you clicked too fast, it will reset the "id"
+                if(id) { // cancel previous timer
+                    clearTimeout(id);
+                }
+
+                id = setTimeout(function() { // set new timer
+                    fn(...args);
+                }, delay);
+            };
+        };
+    </script>
+</body>
+</html>

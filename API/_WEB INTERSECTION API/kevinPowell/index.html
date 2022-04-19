@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .max-wrapper {
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sec {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sec-one {
+            background-color: pink;
+        }
+        .sec-two {
+            background-color: lightblue;
+        }
+
+        .sec-three {
+            background-color: lightgreen;
+        }
+
+        .box {
+            position: fixed;
+            min-height: 60vh;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 80vw;
+            border: 5px dashed black;
+            outline: 30vh solid rgba(0, 0, 0, 0.171);
+        }
+
+        .contentbox {
+            padding: 20px;
+        }
+
+        .-inverse {
+            background-color: black;
+            color: white;
+            opacity: .5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <section class="sec sec-one" data-js-sec-one>
+        <div class="max-wrapper">
+            <div class="contentbox">
+                <h2 class="title">Lorem ipsum dolor sit amet. one</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non, aliquam assumenda doloremque dicta voluptatum, obcaecati accusantium quia numquam, ipsam explicabo! Voluptas ipsa iusto et eaque laborum! Repudiandae facilis molestiae totam ullam veritatis. Reprehenderit, sed ipsum fuga repudiandae minus commodi eaque, dolore maiores animi adipisci voluptas magni distinctio aspernatur nihil.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec sec-two">
+        <div class="max-wrapper">
+            <div class="contentbox">
+                <h2 class="title">Lorem ipsum dolor sit amet. two</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non, aliquam assumenda doloremque dicta voluptatum, obcaecati accusantium quia numquam, ipsam explicabo! Voluptas ipsa iusto et eaque laborum! Repudiandae facilis molestiae totam ullam veritatis. Reprehenderit, sed ipsum fuga repudiandae minus commodi eaque, dolore maiores animi adipisci voluptas magni distinctio aspernatur nihil.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec sec-three">
+        <div class="max-wrapper">
+            <div class="contentbox">
+                <h2 class="title">Lorem ipsum dolor sit amet. three</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non, aliquam assumenda doloremque dicta voluptatum, obcaecati accusantium quia numquam, ipsam explicabo! Voluptas ipsa iusto et eaque laborum! Repudiandae facilis molestiae totam ullam veritatis. Reprehenderit, sed ipsum fuga repudiandae minus commodi eaque, dolore maiores animi adipisci voluptas magni distinctio aspernatur nihil.</p>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>

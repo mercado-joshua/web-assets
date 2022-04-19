@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            background: url('/css-animations/animations/real-world/Banner_Tucson_16x9.jpg');
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            animation: background-fade-in 1.5s ease-out .5s;
+        }
+
+        .title {
+            margin: 0;
+            padding: 0 2em;
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: whitesmoke;
+            text-shadow: -1px 4px 3px grey;
+            text-align: center;
+
+            opacity: 0;
+            
+            animation-name: text-fade-in;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-out;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes text-fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes background-fade-in {
+            from {
+                opacity: 0;
+                width: 0;
+            }
+
+            to {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h2 class="title">Be the best version of you</h2>
+    </div>
+</body>
+</html>

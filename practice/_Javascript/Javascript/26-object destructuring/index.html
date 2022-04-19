@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+const getUser = () => {
+    return {
+        name: "josh",
+        surname: "mercado",
+        gender: "male",
+        address: {
+            country: "philippines",
+            city: "mabalacat",
+            postCode: 2010,
+            fullAddress: {
+                houseNumber: 6211,
+                street: "mark"
+            }
+        },
+        age: 23
+    };
+};
+
+const user = getUser();
+// const name = user.name;
+// const age = user.age;
+const country = user.address.country;
+// const houseNumber = user.address.fullAddress.houseNumber;
+
+// console.log(name);
+// console.log(age);
+console.log(country);
+// console.log(houseNumber);
+
+// new way
+const {name, age, address: {country: theCountry}} = user;
+// nested object
+const {address: {fullAddress: {houseNumber: number}}} = user;
+
+console.log(name);
+console.log(age);
+console.log(theCountry);
+console.log(number);
+</script>
+</body>
+</html>

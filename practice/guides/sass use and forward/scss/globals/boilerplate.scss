@@ -1,0 +1,33 @@
+@use '../utils';
+@use '../../../libs/library';
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after,
+* {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: red;
+    margin: 0;
+    padding: 0;
+
+    @include utils.breakpoint('medium') {
+        padding: 0;
+    }
+}
+
+.rounded-corners {
+    border-radius: utils.$border-radius;
+}
+
+.rounded-corners-library {
+    border-radius: library.$border-radius;
+}
+
+

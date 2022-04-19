@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// store multiple values
+var name = "Joshua mercado"
+
+var toys = [
+    "bakugan",
+    "yugioh",
+    "trumpo"
+];
+
+console.log(name);
+console.log(toys);
+console.log(toys + " type of: " + typeof toys);
+
+// grab the value
+console.log(toys[1]);
+
+// get the size
+console.log(toys.length);
+
+// looping array
+for (var toy of toys) {
+    console.log("toy name: " + toy);
+}
+
+toys.forEach(function(toyName, arrayIndex) {
+    console.log(arrayIndex + " : " + toyName);
+});
+</script>
+</body>
+</html>

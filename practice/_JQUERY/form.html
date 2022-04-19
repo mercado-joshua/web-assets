@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <h2>Title 1</h2>
+            <a class="a-1" href="#">next</a>
+        </div>
+        <div class="step"> 
+            <h2>Title 2</h2>
+            <a class="a-2" href="#">next</a>
+        </div>
+        <div class="step">
+            <h2>Title 3</h2>
+            <a class="a-3" href="#">next</a>
+        </div>
+    </form>
+
+    <ul id="one" class="level-1">
+        <li class="item-i">I</li>
+        <li id="ii" class="item-ii">II
+          <ul class="level-2">
+            <li class="item-a">A</li>
+            <li class="item-b">B
+              <ul class="level-3">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+              </ul>
+            </li>
+            <li class="item-c">C</li>
+          </ul>
+        </li>
+        <li class="item-iii">III</li>
+      </ul>
+
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+      </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            init();
+        });
+
+        function init() {
+            $('.step').css('display','none');
+
+            $('.a-1').on('click', function(){
+                $(this).css('display','none').parent();
+
+                $(this).closest();
+
+                // $(this).css('display','none').parent().parent();
+
+                const main = $('.main'); // parent
+                main.index($('.step')); // know its children index
+
+            });
+        }
+
+//         $( "li.item-a" )
+//   .closest( "ul" )
+//   .css( "background-color", "red" );
+
+$( "li.item-a" )
+  .closest( "li" )
+  .css( "background-color", "red" );
+
+//   $( "ul" ).eq( 2 ).css( "background-color", "blue" );
+  $( "body" ).find( "div" ).eq( 2 ).addClass( "blue" ); // works like nth-child but starts with 0 index
+
+  $('form').submit();
+
+  $('input').each( function() {
+
+  });
+
+  $(this).attr('name');
+  $(this).val().length
+//   push
+
+  /*
+  <ul>
+  <li>foo</li>
+  <li>bar</li>
+</ul>
+You can select the list items and iterate across them:
+$( "li" ).each(function( index ) {
+  console.log( index + ": " + $( this ).text() );
+});
+  */
+    </script>
+</body>
+</html>

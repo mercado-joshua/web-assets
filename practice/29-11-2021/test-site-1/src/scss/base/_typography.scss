@@ -1,0 +1,17 @@
+@use '../abstracts'; // use all the available stylesheet in the "abstract/" folder
+
+html {
+    @include abstracts.set-breakpoint(600px) {
+        font-size: 1.125rem;
+    }
+
+    @include abstracts.set-breakpoint(900px) {
+        font-size: 1.25rem;
+    }
+}
+
+body {
+    font-family: abstracts.$font-poppins;
+    background-color: abstracts.$color-secondary;
+    color: #fff;
+}

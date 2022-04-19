@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        
+        Components should be made in a way that they're reusable in different contexts. Avoid putting these properties in components:
+
+        Positioning (position, top, left, right, bottom)
+        Floats (float, clear)
+        Margins (margin)
+        Dimensions (width, height) *
+        * Exception to these would be elements that have fixed width/heights, such as avatars and logos.
+
+        Define positioning in parents! [1]
+        */
+        .article-list {
+            & {
+                @include clearfix;
+            }
+
+            > .article-card { // [1]
+                width: 33.3%;
+                float: left;
+            }
+        }
+
+        .article-card {
+            & {}
+            > .image {}
+            > .title {}
+            > .category {}
+        }
+    </style>
+</head>
+<body>
+    <section class="article-list">
+        <div class="article-card">
+            <div class="image"></div>
+            <h2 class="title"></h2>
+            <span class="category"></span>
+        </div>
+    </section>
+</body>
+</html>

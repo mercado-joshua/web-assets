@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <img src="X" onerror="document.write('image not found');" alt=""> -->
+    <form action="">
+        <input type="text" class="js-text">
+        <input type="button" class="js-button" value="submit">
+        <p class="para"></p>
+    </form>
+    <button onclick="newURL()" >click me</button>
+    <script>
+        const submit = document.querySelector('.js-button');
+
+        const text = document.querySelector('.js-text');
+        const para = document.querySelector('.para');
+
+        submit.addEventListener('click', function() {
+            let value = text.value;
+            para.innerText = value;
+        });
+
+        function newURL() {
+            window.location.replace('wwww.youtube.com');
+            // window.location.reload();
+
+            try {
+                window.location.replace('wwww.youtube.com');
+            } catch(e) {
+                window.location = 'wwww.youtube.com';
+            }
+        }
+
+        document.write('Helloworld');
+
+        let promp = '';
+
+        prompt = prompt('enter your name');
+
+        document.write(prompt);
+
+        if(prompt === 'josh') {
+            document.write('Hi! ' + prompt);
+        }
+
+        else if(prompt === 'mercado') {
+            document.write('Hi! ' + prompt);
+        }
+
+        else {
+            document.write('Who you po?');
+        }
+
+        switch(prompt) {
+            case 'josh':
+                document.write('Hi! ' + prompt);
+            break;
+            case 'mercado':
+                document.write('Hi! ' + prompt);
+            break;
+
+            default:
+                document.write('Who you po');
+        }
+
+        // infinite loop function
+        function func1() {
+            console.log('func1');
+            func2();
+        }
+
+        function func2() {
+            console.log('func2');
+            func1();
+        }
+    </script>
+</body>
+</html>

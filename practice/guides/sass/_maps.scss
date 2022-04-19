@@ -1,0 +1,33 @@
+// array of data that can be group together
+$map1: (
+    "keyName": "Value",
+    "anotherKey": 200px
+);
+
+$map2: (
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+);
+
+$map3: (
+    "keyName": "targetting a key produces its value",
+    "string": string,
+    "number": 102,
+    "list": (background .2s, color .3s),
+    "nestedMap": (
+        "nestedKey": "nested value",
+        "url": "/images/cat.png",
+        "width": 300px
+    )
+);
+
+.maps-example {
+    content: map-keys($map1);
+    content: map-values($map1);
+    content: map-has-key($map1, "keyName"); // returns true if the map has key you are looking for
+    content: map-get($map3, "keyName"); // get the value of the key you are looking for
+    content: inspect(map-merge($map1, $map2)); // merges maps, inspect to escape the values
+    content: inspect(map-remove($map2, "key2", "key3"));
+}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+            outline: 1px dashed blue;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .image {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+            gap: 1em;
+
+            padding: 0 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery"></div>
+
+    <script>
+        function getProducts() {
+            fetch('https://fakestoreapi.com/products?limit=5')
+            .then(res => res.json())
+            .then(json => {
+                console.log(json);
+                const gallery = document.querySelector('.gallery');
+
+                json.map(product => {
+                    return `
+                    <div class="card">
+                        <img src="${product.image}" alt="" class="image">
+                        <h3 class="title">${product.title}</h3>
+                        <p class="description">${product.description}</p>
+                        <span class="category">${product.category}</span>
+                        <span class="price">${product.price}</span>
+                    </div>`;
+                }).forEach(element => {
+                    gallery.innerHTML += element;
+                });
+            })
+            .catch(error => console.error(error));
+        }
+
+        getProducts();
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+// list
+// separated either by space or comma
+$list1: 200px;
+$list2: 1px 2px 3px black;
+$list3: helvetica, arial, sans-serif;
+
+$nestedList: 1px 2px 3px black, 4px 5px 6px red, 7px 8px 9px yellow;
+
+html {
+    line-height: length($list2); // returns 4
+    text-shadow: nth($nestedList, 2); // returns value of selected index in the list
+    padding: nth($list2, 2);
+    box-shadow: set-nth($nestedList, 2, 5px 5px 5px blue); // replace values with a new one
+    margin: set-nth($list2, 4, pink);
+    content: list-separator($list3); // returns "comma" or "space", nested list are allowed
+    text-shadow: join($list1, $list2); // joins/merge list
+    text-shadow: join($list1, $list2, comma); // fro saparator arg: choose either "space" or "comma"
+    font-family: append($list3, "viramaFont", comma);
+    z-index: index($list3, arial); // returns the position of a value in the list
+    background: zip(
+        1px 2px 3px,
+        1rem 2rem 3rem,
+        red blue black
+    );
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let persons = [
+            {
+                name: 'joshua'
+            },
+            {
+                name: 'maj'
+            },
+            {
+                name: 'frienchie'
+            },
+            {
+                name: 'areej'
+            }
+        ];
+        
+        // [4]
+        function filterPersons(name) {
+            // [10]
+            emptyResponses();
+
+            // [5]
+            let results = persons.filter(function(element) {
+                return element.name === name;
+            });
+
+            // [6]
+            results.forEach(function(response) {
+                // console.log(element);
+
+               if(response) {
+                    createParagraph(response); // [7]
+               }
+            });
+        }
+
+        // [9]
+        function emptyResponses() {
+            window.document.getElementById('responses').innerHTML = '';
+        }
+
+        // [8]
+        function createParagraph(item) {
+            let paragraph = document.createElement('p');
+            let text = document.createTextNode(item.name);
+            paragraph.appendChild(text);
+
+            // document.body.appendChild(paragraph);
+            let container = document.getElementById('responses');
+            container.appendChild(paragraph);
+        }
+
+        // [1]
+        let newInput = document.createElement('input');
+        newInput.addEventListener('input', function(event) {
+            filterPersons(event.target.value); // [3]
+        });
+
+        // [2]
+        window.document.body.appendChild(newInput);
+
+        // [9]
+        let newResponses = document.createElement('div');
+        newResponses.setAttribute('id', 'responses');
+        document.body.appendChild(newResponses);
+
+        let promises1 = new Promise(function(resolve, reject) {
+
+        // your code to run
+        console.log('done');
+
+        setTimeout(function() {
+            resolve('finished after 5 second');
+        }, 5000);
+
+        setTimeout(function() {
+            reject('an error occurred');
+        }, 5500);
+
+        });
+
+        promises1
+        .then(function(data) {
+            console.log(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+        .finally(function() {
+            console.log('this will show up no matter what!.. eg. add a loading feature');
+        });
+
+
+
+    </script>
+</body>
+</html>

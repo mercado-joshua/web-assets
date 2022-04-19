@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+const calculatePay = (
+    yearSalary, 
+    bonus = {
+        teamBonus: 0,
+        employeeBonus: 0
+    }) => {
+    return yearSalary + bonus.teamBonus + bonus.employeeBonus;
+};
+
+console.log(calculatePay(22000, {
+    teamBonus: 100,
+    employeeBonus: 6000
+}));
+</script>
+</body>
+</html>

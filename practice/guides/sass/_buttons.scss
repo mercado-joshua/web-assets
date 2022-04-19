@@ -1,0 +1,50 @@
+.button {
+    display: inline-block;
+    text-decoration: none;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    background-color: #ccc;
+    color: #222;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+$colormap: (
+    "green": (
+        background-color: #86c351,
+        hover: #78b04a,
+    ),
+    "blue": (
+        background-color: #00b3e0,
+        hover: #0097be,
+    ),
+    "red": (
+        background-color: #ff5817,
+        hover: #da4912,
+    ),
+);
+
+@each $color, $map in $colormap {
+
+    @each $property, $value in $map {
+        @if($property == 'background-color') {
+            .button.#{$color} {
+                background-color: $value;
+                color: #fff;
+            }
+        } 
+        @else {
+            .button.#{$color}:hover {
+                background-color: $value;
+            }
+        }
+    }
+}
+
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}

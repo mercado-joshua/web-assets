@@ -1,0 +1,23 @@
+$type: element;
+$num: 10;
+$noValue: null; // means no value assigned
+
+.if-directive {
+    @if $type == helloWorld {
+        content: "Yup True";
+    }
+    @else if $noValue != null {
+        content: "Doesnt match null";
+    }
+    @else {
+        content: "Nope False!";
+    }
+
+    @if $num == 11 { width: 11px; }
+    @else if $num != 11 { width: 12px; }
+    @else if $num > 11 { width: 13px; }
+    @else if $num < 11 { width: 14px; }
+    @else if $num >= 11 { width: 15px; }
+    @else if $num <= 11 { width: 16px; }
+    @else { width: 0 }
+}

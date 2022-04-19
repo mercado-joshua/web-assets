@@ -1,0 +1,15 @@
+.recent-post {
+  border: 0.5em solid lightgrey;
+  padding: 1em;
+}
+.recent-post > .title {
+  text-align: center;
+  padding: 1em 0;
+}
+.recent-post > .image {
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}

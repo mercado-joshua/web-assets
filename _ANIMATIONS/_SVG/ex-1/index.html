@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        circle { 
+            stroke: red; /* stroke attr / border-color? */
+            stroke-width: 1; /* stroke-width attr / border-width? */
+            fill: goldenrod; /* fill attr / background-color? */
+        }
+
+        /* svg {
+            width: 100%;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <circle>
+         cx = left to right / translateX() 5 (default: px) or 5em
+         cy = top to bottom / translateY()
+         r =  shrink / large / scale() -->
+    <h2>Circle and Ellipse</h2>
+    <svg>
+        <circle
+            cx="400" 
+            cy="80" 
+            r="60" 
+
+            
+            stroke="black" 
+            stroke-width="5"
+            fill="silver"
+        />
+    </svg>
+
+    <svg>
+        <!-- <circle>
+         rx = width (x radius)
+         ry = width (y radius)
+        -->
+        <ellipse 
+            cx="80"
+            cy="75"
+
+            rx="70"
+            ry="60"
+
+            stroke="green"
+            stroke-width="2"
+            fill="blue"
+        />
+    </svg>
+
+    <h2>Square and Rectangle</h2>
+    <svg class="square">
+        <!--
+         rx = border-top-left-radius / border-top-right-radius
+         ry = border-bottom-left-radius / border-bottom-right-radius
+
+         x = left to right / translateX() 5 (default: px) or 5em
+         y = top to bottom / translateY()
+        -->
+        <rect
+            x="100"
+            y="0"
+
+            width="100"
+            height="100"
+
+            rx="10"
+            ry="60"
+
+            stroke="#050505"
+            stroke-width="2"
+            fill="lightgray"
+        />
+    </svg>
+
+    <svg class="rectangle">
+        <rect
+            x="100"
+            y="0"
+
+            width="150"
+            height="100"
+
+            stroke="#050505"
+            stroke-width="2"
+            fill="lightgray"
+        />
+    </svg>
+
+    <h2 class="line">line</h2>
+    <svg>
+        <!--
+         x1 = left to right / translateX() of start point
+         y1 = top to bottom / translateY() of start point
+
+         x2 = left to right / translateX() of end point
+         y2 = top to bottom / translateY() of end point
+        -->
+        <line
+            x1="25"
+            y1="25"
+
+            x2="55"
+            y2="55"
+
+            stroke="black"
+            stroke-width="4"
+        />
+    </svg>
+
+    <h2 class="polyline">polyline</h2>
+    <svg>
+        <!--
+            start point,
+            end point,
+            next end point,
+            next end point ...
+        -->
+        <polyline 
+            points="
+            20, 20 
+            40, 25
+            60, 40
+            80, 120
+            "
+            stroke="black"
+            stroke-width="4"
+            fill="red"    
+        />
+    </svg>
+
+    <h2 class="polyline">polygon</h2>
+    <svg>
+        <polygon 
+            points= "
+            60,10 
+            140,10 
+            190,70 
+            190,130 
+            140,190 
+            70,190 
+            10,130 
+            10,70"
+            
+            fill="gainsboro" 
+            stroke="black" 
+            stroke-width="3"
+        />
+    </svg>
+
+    <h2 class="polyline">svg path</h2>
+    <svg height="200" width="200" viewBox="0 0 200 200">
+        <!--
+            viewport - determine how much you can see the svg
+            viewbox - [pan] [zoom]
+                [min-x , min-y] pan - determines the position of the viewbox
+                [width, height] zoom - if larger than the viewport = zoom out, if smaller, zoom in
+        -->
+        <polygon 
+        points= "
+        60,10 
+        140,10 
+        190,70 
+        190,130 
+        140,190 
+        70,190 
+        10,130 
+        10,70"
+        
+        fill="gainsboro" 
+        stroke="black" 
+        stroke-width="3"
+    />
+    </svg>
+</body>
+</html>

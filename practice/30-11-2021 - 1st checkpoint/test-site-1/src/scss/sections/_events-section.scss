@@ -1,0 +1,32 @@
+@use '../abstracts';
+
+.events-section {
+    padding: 3em 0 5em 0;
+
+    > .title {
+        color: #10486C;
+        text-align: center;
+        margin-bottom: .7em;
+    }
+
+    > .date {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: gray;
+        text-align: center;
+    }
+
+    > .description {
+        text-align: center;
+    }
+
+    @include abstracts.set-breakpoint(600px) {
+        padding-bottom: 1em;
+        
+        > .title,
+        > .date,
+        > .description {
+            text-align: left;
+        }
+    }
+}

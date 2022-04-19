@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// callbacks
+// a fuction passed inside of another function and that function get executed at some point
+
+// pass a name and a callback
+function callbackExample (name , callback) {
+    // invoke the function and pass its name
+    console.log(callback (name));
+}
+
+var callback = function (name) {
+    return "Konnichiwa! " + name; 
+}
+
+callbackExample("Joshua", callback);
+
+
+// example 2
+var mapCallBack = function (item) {
+    return item * 2;
+}
+
+var map = [1,2,3,4,5].map (mapCallBack);
+
+console.log(map);
+
+</script>
+</body>
+</html>

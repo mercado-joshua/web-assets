@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var person = {
+        name: "joshua",
+        age: 23
+    };
+    
+    switch (person.age) {
+        case 18:
+            console.log("the age is 18 yrs old");
+            break;
+        case 23:
+            console.log("the age is 23 yrs old");
+            break;
+        default:
+            console.log("age undefined");
+    }
+
+    switch (true) {
+        case (person.age == 17):
+            console.log("about to be an adult");
+            break;
+        
+        case (person.age >= 18):
+            console.log("already an adult");
+            break;
+
+        default:
+            console.log("is not an adult");
+    }
+
+    switch (new Date().getDay()) {
+        case 23:
+            console.log("today is saturday!");
+            break;
+        default:
+            console.log("I dont know");
+    }
+</script>
+</body>
+</html>

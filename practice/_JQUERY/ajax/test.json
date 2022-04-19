@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "id": 1001,
+            "name": "name one",
+            "description": "description one",
+            "price": 500.00
+        },
+        {
+            "id": 1002,
+            "name": "name two",
+            "description": "description two",
+            "price": 400.00
+        },
+        {
+            "id": 1003,
+            "name": "name three",
+            "description": "description three",
+            "price": 300.00
+        },
+        {
+            "id": 1004,
+            "name": "name four",
+            "description": "description four",
+            "price": 200.00
+        }
+    ]
+}

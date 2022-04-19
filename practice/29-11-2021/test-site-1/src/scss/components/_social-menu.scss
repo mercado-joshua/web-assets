@@ -1,0 +1,9 @@
+.social-menu {
+    > .icon {
+        font-size: 2rem;
+    }
+
+    > .icon + .icon {
+        margin-left: .3em;
+    }
+}

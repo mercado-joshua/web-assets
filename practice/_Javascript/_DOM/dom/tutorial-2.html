@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tomato {
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <input class="input" type="text" value="hahaha">
+    </div>
+
+    <div class="p-container">
+        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, iusto!</p>
+    </div>
+
+    <div class="div-1">
+        <p>child 1</p>
+    </div>
+
+    <ul class="ul-list">
+
+    </ul>
+
+    <div class="box b-1">
+        box 1
+    </div>
+
+    <ul class="ul-2">
+        <li>Item 1</li>
+        <li class="item-2">Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h1 class="title" data-title="hello world" title="hello world">hello world</h1>
+
+    <div id="title" data-name="joshua" data-started-training-at="november">sample text</div>
+
+    <p class="desc1">Lorem ipsum dolor sit amet.</p>
+
+    <div class="box-4"></div>
+    <div class="box-5"></div>
+    <script>
+        let inp = document.querySelector('.input');
+        inp.setAttribute('value', 'hohohoho');
+        console.log(inp.getAttribute('value'));
+
+        let p = document.querySelector('.desc');
+        p.textContent = 'hahahahahhahahahah';
+
+        let d1 = document.querySelector('.div-1');
+        let newP = document.createElement('p');
+        let newPText = document.createTextNode('append text');
+
+        newP.appendChild(newPText);
+        d1.appendChild(newP);
+
+        // 1
+        // document Fragment - an invisible HTML document
+        // you can create or retrieve them in any HTML document
+
+        let ul = document.querySelector('.ul-list');
+        let docFrag = document.createDocumentFragment();
+
+        let item1 = document.createElement('li');
+        let item2 = document.createElement('li');
+
+        item1.textContent = 'item 1';
+        item2.textContent = 'item 2';
+
+        docFrag.appendChild(item1);
+        docFrag.appendChild(item2);
+
+        console.log(docFrag);
+        ul.appendChild(docFrag);
+        console.log(docFrag); //  this is now empty, since it is used already
+
+        let bx1 = document.querySelector('.b-1');
+        bx1.addEventListener('click', function(event) {
+
+            // 2
+            // class
+            // --------------
+            event.target.classList.toggle('tomato');
+            console.log(event.target.className);
+            console.log(event.target.getAttribute('class'));
+            console.log(event.target.classList);
+
+            // event.target.classList.add();
+            // event.target.classList.remove();
+            // event.target.classList.replace();
+            // event.target.classList.contains(); // returns true or false
+
+        });
+
+        // 3
+        // dataset
+        // --------------
+        const title = document.querySelector('#title');
+
+        console.log(title.dataset);
+
+        title.dataset.name = 'maj'; // change attribute value
+        title.dataset.startedTrainingAt = 8; // change attribute value
+        console.log(title.dataset);
+
+        title.removeAttribute('data-name'); // to remove data- attribute
+        console.log(title.dataset);
+
+        // 4
+        // insertBefore - add items, inside of a parent
+        // --------------
+        const ul2 = document.querySelector('.ul-2');
+        const li2 = document.querySelector('.item-2');
+
+        const li3 = document.createElement('li');
+
+        const item = document.createTextNode('item 3');
+        li3.appendChild(item);
+
+        ul2.insertBefore(li3, li2);
+
+        // 5
+        // copy a node
+        // --------------
+
+        const copyElement = li3.cloneNode(); // copies/duplicate this element, doesnt include child nodes by default
+        // li3.cloneNode(true); - this is a deep clone, meaning all of the child nodes will also be copied
+
+        ul2.appendChild(copyElement);
+
+        // 6
+        // .clientHeight - to get the total height of an element in "px"
+        console.log('.clientHeight:', bx1.clientHeight + 'px');
+
+        // 7
+        // .getBoundingClientRect() - 
+
+        console.log(bx1.getBoundingClientRect());
+        console.log(bx1.getBoundingClientRect().width);
+        console.log(bx1.getBoundingClientRect().height);
+        console.log(bx1.getBoundingClientRect().x);
+        console.log(bx1.getBoundingClientRect().y);
+        console.log(bx1.getBoundingClientRect().top);
+        console.log(bx1.getBoundingClientRect().bottom);
+        console.log(bx1.getBoundingClientRect().left);
+        console.log(bx1.getBoundingClientRect().right);
+
+        console.log('window.innerHeight', window.innerHeight);
+
+        window.addEventListener('scroll', function(event) {
+            // event.target.innerHeight;
+            // console.log(event.target.innerHeight);
+            console.log(window.innerHeight);
+        });
+
+        // 8 .outerHTML = changes html elements
+        //-----------------
+        let title2 = document.querySelector('.title');
+        console.log(title2.outerHTML);
+        console.log(title2.outerHTML = '<h3>Ive been changed</h3>');
+
+        // 9 window.parent.document = refers to the main tab/document where <iframe>
+        // is inserted, lets you use the dom of the parent element
+
+        // 10 insertAdjacentHTML - creates HTML, works like .innerHTML but better
+        const desc1 = document.querySelector('.desc1');
+        
+        // beforebegin - before element
+        // afterbegin - first child
+        // beforeend - last child
+        // afterend - after element
+
+        desc1.insertAdjacentHTML('beforebegin', '<strong>before element</strong>');
+        console.log(desc1.outerHTML);
+
+        desc1.insertAdjacentHTML('afterbegin', '<strong>first child</strong>');
+        console.log(desc1.outerHTML);
+
+        desc1.insertAdjacentHTML('beforeend', '<strong>last child</strong>');
+        console.log(desc1.outerHTML);
+
+        desc1.insertAdjacentHTML('afterend', '<strong>after element</strong>');
+        console.log(desc1.outerHTML);
+
+        // 11 insertAdjacentElement - works like appendChild() and insertBefore()
+        // accepts elements only, not strings
+        // the element can only be used once
+
+        const bx2 = document.querySelector('.box');
+
+        // beforebegin - before element
+        // afterbegin - first child
+        // beforeend - last child
+        // afterend - after element
+
+        const span1 = document.createElement('span');
+        span1.textContent = 'spaaan!';
+
+        bx2.insertAdjacentElement('beforebegin', span1);
+        // bx2.insertAdjacentElement('afterbegin', span1);
+        // bx2.insertAdjacentElement('beforeend', span1);
+        // bx2.insertAdjacentElement('afterend', span1);
+
+        // 12 
+
+        const h3 = document.querySelector('h3');
+        h3.insertAdjacentText('beforebegin', 'NeW TexT');
+        h3.insertAdjacentText('afterbegin', 'NeW TexT');
+        h3.insertAdjacentText('beforeend', 'NeW TexT');
+        h3.insertAdjacentText('afterend', 'NeW TexT');
+
+        // 13 .matches - checks if the element matches the specified selector
+        const result = bx2;
+        console.log(result.matches('.box'));
+
+        // 14 event delegation - one event for all children, safe for creating another element
+        ul2.addEventListener('click', function(event) {
+            let element = event.target;
+
+            if (element.matches('li')) {
+                element.style.backgroundColor = 'red';
+            }
+            console.log(element);
+        });
+
+        // 15. replaceChild() - needs parent to do this
+        const li4 = document.createElement('li');
+        li4.textContent = 'Jquery';
+
+        let firstitem = ul2.children[0];
+
+        ul2.replaceChild(li4, firstitem); // new element, child element to be replaced
+
+        // 16. replaceWith() - child elements can now use it, without parent
+        let seconditem = ul2.children[1];
+
+        const li5 = document.createElement('li');
+        li5.textContent = 'neww iteeeem';
+
+        seconditem.replaceWith(li5);
+
+        const bx4 = document.querySelector('.box-4');
+        const bx5 = document.querySelector('.box-5');
+
+        // 17. isEqualNode - checks if the node are same, including their children
+        console.log('isEqualNode', bx4.isEqualNode(bx5)); // false, different class
+        console.log('isEqualNode', bx4.isEqualNode(bx4)); // same class
+
+
+    </script>
+</body>
+</html>

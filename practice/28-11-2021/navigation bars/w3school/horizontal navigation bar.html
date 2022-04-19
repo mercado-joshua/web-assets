@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        h2 {
+            margin-top: 1em;
+        }
+
+        .navigation-menu > .item > .link {
+            background-color: lightgray;
+            width: 100%;
+            padding: .5em 1em;
+            color: #000;
+        }
+
+        .navigation-menu > .item > .link.active {
+            background-color: green;
+            color: #fff;
+        }
+
+        .navigation-menu > .item > .link:hover:not(.active) {
+            background-color: grey;
+        }
+
+        /* banner section */
+
+        .banner-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 1em;
+            border: 1px solid black;
+        }
+
+        .banner-section > .navbar-section {
+            flex: .5;
+            background-color: lightgray;
+        }
+
+        .banner-section > .paragraph-section {
+            flex: 2;
+        }
+
+        /* horizontal menu */
+        .header-section {
+            background-color: lightgray;
+        }
+
+        .horizontal-menu {
+            display: flex;
+        }
+        .horizontal-menu > .item > .link {
+            background-color: lightgray;
+            padding: .5em 1em;
+            color: #000;
+        }
+
+        .horizontal-menu > .item > .link.active {
+            background-color: green;
+            color: #fff;
+        }
+
+        .horizontal-menu > .item > .link:hover:not(.active) {
+            background-color: grey;
+        }
+
+        .horizontal-menu > .item.last {
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>vertical navbar</h2>
+    <div class="header-section">
+        <ul class="navigation-menu">
+            <li class="item"><a class="link active" href="#">Home</a></li>
+            <li class="item"><a class="link" href="#">About</a></li>
+            <li class="item"><a class="link" href="#">Services</a></li>
+            <li class="item"><a class="link" href="#">Sign up</a></li>
+        </ul>
+    </div>
+
+    <h2>sidebar</h2>
+    <div class="banner-section">
+        <div class="navbar-section">
+            <ul class="navigation-menu">
+                <li class="item"><a class="link active" href="#">Home</a></li>
+                <li class="item"><a class="link" href="#">About</a></li>
+                <li class="item"><a class="link" href="#">Services</a></li>
+                <li class="item"><a class="link" href="#">Sign up</a></li>
+            </ul>
+        </div>
+
+        <div class="paragraph-section">
+            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, eos culpa quo libero nisi provident minima vel error et inventore saepe sit temporibus distinctio soluta fugiat ratione aperiam consectetur voluptatem praesentium assumenda at exercitationem deleniti quidem! Eum facilis nesciunt in ipsa necessitatibus atque corrupti, pariatur tempora! Ex voluptatem placeat cum nostrum accusantium eaque in, tempora deserunt corrupti! Provident rem quia voluptas placeat, libero magni dolorem, culpa hic recusandae nemo minima natus asperiores autem quibusdam nobis, unde dolore! Quibusdam dolore praesentium debitis atque non eveniet culpa dolor earum veritatis pariatur animi, voluptatibus quidem quas quia, reiciendis accusamus in modi fugiat vero?</p>
+        </div>
+    </div>
+
+    <h2>horizontal navbar</h2>
+    <div class="header-section">
+        <ul class="horizontal-menu">
+            <li class="item"><a class="link active" href="#">Home</a></li>
+            <li class="item"><a class="link" href="#">About</a></li>
+            <li class="item"><a class="link" href="#">Services</a></li>
+            <li class="item"><a class="link" href="#">Sign up</a></li>
+        </ul>
+    </div>
+
+    <h2>horizontal navbar</h2>
+    <div class="header-section">
+        <ul class="horizontal-menu">
+            <li class="item"><a class="link active" href="#">Home</a></li>
+            <li class="item"><a class="link" href="#">About</a></li>
+            <li class="item"><a class="link" href="#">Services</a></li>
+            <li class="item last"><a class="link" href="#">Sign up</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.section-one {
+  padding: 2em 0;
+}
+.section-one .container > .title {
+  color: tomato;
+}

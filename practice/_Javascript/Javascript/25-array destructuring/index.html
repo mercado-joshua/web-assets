@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// old method
+const names = ['josh', 'richard', 'aerol', 'aljon'];
+const josh = names[0];
+const richard = names[1];
+const aerol = names[2];
+
+// new method
+const [josh1, richard1, aerol1] = names;
+
+// to get the rest of the items
+const [josh2, richard2, aerol2, ...restOfItems] = names;
+
+console.log(`${josh} ${richard} ${aerol}`);
+console.log(`${josh1} ${richard1} ${aerol1}`);
+console.log(restOfItems);
+</script>
+</body>
+</html>

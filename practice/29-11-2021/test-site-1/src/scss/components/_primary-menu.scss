@@ -1,0 +1,17 @@
+@use '../abstracts';
+
+.primary-menu {
+    display: none;
+
+    @include abstracts.set-breakpoint(750px) {
+        display: flex;
+
+        > .list + .list {
+            margin-left: 1em;
+        }
+
+        > .list > .item {
+            color: #fff;
+        }
+     }
+}

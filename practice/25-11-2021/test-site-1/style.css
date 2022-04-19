@@ -1,0 +1,80 @@
+*::after,
+*::before,
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.sample-card {
+    background-color: #000;
+    min-height: 100vh;
+    padding: 6em 1.5em;
+}
+
+.title {
+    margin: 0;
+}
+
+.description {
+    margin: 1.7em 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.highlight.-yellow {
+    color: yellow;
+}
+
+.highlight.-faded {
+    color: yellow;
+    font-weight: 900;
+    opacity: 0.8;
+}
+
+.button {
+    border: none;
+    background-color: yellow;
+    font-weight: 700;
+    padding: 1em 2em;
+}
+
+.button + .button {
+    margin-left: .5em;
+}
+
+/* larger screen */
+@media screen and (min-width: 500px) {
+    html {
+        font-size: 1.125rem;
+    }
+
+    .sample-card {
+        padding: 7em 2.5em;
+    }
+}
+
+@media screen and (min-width: 680px) {
+    .sample-card {
+        padding: 8em 3.5em;
+    }
+}
+
+@media screen and (min-width: 820px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .sample-card {
+        min-height: 0;
+        max-width: 800px;
+        padding: 5em 3.5em;
+    }
+}

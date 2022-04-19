@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showText();">Show Text</button>
+    <button onclick="showJson();">Show Json</button>
+    <p class="para1"></p>
+    <script>
+        function showText() {
+            let xhr = new XMLHttpRequest();
+
+            // initialize the request
+            // true - asynchronous
+            xhr.open('GET', 'text.txt', true);
+
+            // handle the response, the server will give you the response,
+            // so you have to handle it
+
+            xhr.onload = function() {
+                // check if the status is ok or not
+                // 200 - ok
+                // 403 - forbidden
+                // 404 - not found
+
+                if (xhr.status === 200) {
+                    let para = document.querySelector('.para1');
+                    para.innerText = xhr.responseText;
+                }
+
+            };
+
+
+            // send the request
+            xhr.send();
+
+        }
+
+        function showJson() {
+            let xhr = new XMLHttpRequest();
+
+            // initialize the request
+            // true - asynchronous
+            xhr.open('GET', 'https://api.github.com/users', true);
+
+            // handle the response, the server will give you the response,
+            // so you have to handle it
+
+            xhr.onload = function() {
+                // check if the status is ok or not
+                // 200 - ok
+                // 403 - forbidden
+                // 404 - not found
+
+                if (xhr.status === 200) {
+
+                    let content = '';
+                    let data = JSON.parse(xhr.responseText);
+
+                    console.log(data);
+
+    
+                    data.forEach(obj => {
+                        const para = document.createElement('p');
+                        const img = document.createElement('img');
+                        para.innerText = obj.login;
+                        img.src = obj.avatar_url;
+
+                        document.body.appendChild(img);
+                        document.body.appendChild(para);
+                    });
+
+                }
+
+            };
+
+
+            // send the request
+            xhr.send();
+
+        }
+
+        
+    </script>
+</body>
+</html>

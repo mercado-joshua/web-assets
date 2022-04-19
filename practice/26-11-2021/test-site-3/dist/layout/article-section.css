@@ -1,0 +1,52 @@
+.article-section {
+  padding: 2em 0;
+}
+@media screen and (min-width: 900px) {
+  .article-section {
+    padding-top: 0;
+  }
+}
+
+.pinned-post {
+  border-bottom: 0.5px solid grey;
+  padding-bottom: 2em;
+}
+.pinned-post > .title {
+  color: blue;
+}
+
+.posts {
+  padding-top: 2em;
+}
+
+.article-post .image {
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.article-post .title {
+  color: blue;
+  margin: 0.9em 0;
+}
+@media screen and (min-width: 900px) {
+  .article-post .title {
+    margin-top: 0.3em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .article-post {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2em;
+  }
+}
+
+.article-post + .article-post {
+  margin-top: 1.2em;
+}
+
+.sidebar {
+  margin-bottom: 2em;
+}

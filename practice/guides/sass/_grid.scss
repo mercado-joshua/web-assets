@@ -1,0 +1,40 @@
+// targets
+// 100% divided by 16 box = so 1box width should be 6.25%
+.grid > div {
+    height: 25px;
+    background: #ccc;
+    outline: 1px dashed #aaa;
+    float: left;
+}
+
+
+// default grid
+// this will create cell-1 to 16
+// class="grid cell-4" = only 4 div cells are allowed per row
+
+@for $i from 1 through 16 {
+
+    $equation: 100% / $i;
+    .grid.cell-#{$i} > div {
+        width: $equation;
+    }
+}
+
+// adaptable grid
+// set media breakpoints and the no. of columns they will get
+$map: (
+    850: 12,
+    450: 6,
+    380: 3
+);
+
+@each $breakpoint, $columns in $map {
+    @media all and (max-width: #{$breakpoint + px}) {
+        @for $rows from 1 through $columns {
+            $equation: 100% / $rows;
+            .grid.cell-#{$breakpoint}-#{$rows} > div {
+                width: $equation;
+            }
+        }
+    }
+}

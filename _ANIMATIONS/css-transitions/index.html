@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* transition between two states */
+        .box {
+            height: 150px;
+            width: 150px;
+            border: 1px solid red;
+            background-color: tomato;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .box-1 {
+            transition-duration: 500ms;
+
+            /*
+            (n)s/ms - the larger the number, the longer it takes to take effect/complete
+
+            transition-duration
+            transition -property - selects which css property where the transition should apply
+            
+            */
+        }
+
+        .box-1:hover {
+            background-color: thistle;
+        }
+
+        .box-2 {
+            transition-property: transform;
+            /* transition-property: transform, background-color; */
+            /* transition-property: all; */
+            transition-duration: 500ms;
+        }
+
+        .box-2:hover {
+            background-color: thistle;
+            transform: rotate(20deg);
+        }
+
+        .box-3 {
+            transition-property: width;
+            transition-duration: 500ms;
+            /* transition-timing-function: steps(10, end); */
+            /* transition-timing-function: ease; */
+            /* transition-timing-function: ease-in; */
+            /* transition-timing-function: ease-in-out; */
+            transition-timing-function: ease-out;
+
+            /*
+            
+            steps() - gradually
+            ease - fast start, fast end
+            ease-in - slow start (parang bumebwelo), then "push" effect
+            ease-in-out - parang stretch effect
+            ease-out - parang "drawer" effect
+
+            */
+        }
+
+        .box-4:hover {
+            background-color: thistle;
+            width: 300px;
+        }
+
+        .box-4 {
+            transition-property: width;
+            transition-duration: 500ms;
+            transition-timing-function: ease-out;
+
+            /* transition-delay: 5s; delays time for transition to take effect  */
+        }
+
+        .box-4:hover {
+            background-color: thistle;
+            width: 300px;
+        }
+
+        /*
+        
+        SHORTHAND
+
+        transition: background-color 1s ease 0.5s, height 2s linear 0.5s
+        
+        */
+    </style>
+</head>
+<body>
+    <div class="box box-1">box 1</div>
+    <div class="box box-2">box 2</div>
+    <div class="box box-3">box 3</div>
+    <div class="box box-4">box 4</div>
+</body>
+</body>
+</html>

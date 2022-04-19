@@ -1,0 +1,52 @@
+@use '../abstracts';
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-project-card {
+    display: flex;
+    align-items: center;
+
+    @include abstracts.set-breakpoint(768px) {
+        flex-direction: column;
+    }
+}
+
+.flex-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .button-cta {
+        align-self: center;
+    }
+}
+
+.flex-footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.greeting-section {
+    @include abstracts.set-breakpoint(600px) {
+        .contentbox {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            > .button-cta {
+                align-self: flex-start;
+            }
+        }
+    }
+
+    @include abstracts.set-breakpoint(640px) {
+        .contentbox {
+            justify-content: center;
+        }
+    }
+}

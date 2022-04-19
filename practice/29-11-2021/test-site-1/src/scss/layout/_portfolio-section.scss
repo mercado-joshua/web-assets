@@ -1,0 +1,29 @@
+@use '../abstracts';
+
+.portfolio-section {
+    background: url('/dist/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.project-card {
+    grid-column: 1 / -1;
+
+    // @include abstracts.set-breakpoint(900px) {
+    //     padding: 0 4em;
+    // }
+
+    @include abstracts.set-breakpoint(768px) {
+        grid-column: span 4;
+    }
+
+    .contentbox {
+        flex: 1;
+    }
+
+    &:last-child {
+        @include abstracts.set-breakpoint(768px) {
+            grid-column: 3 / span 4;
+        }
+    }
+}

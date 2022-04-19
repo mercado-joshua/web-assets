@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *::before,
+    *::after,
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .navbar-section-one,
+    .navbar-section-two,
+    .navbar-section-three {
+        background-color: #000;
+        padding: 1em 2em;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-section-three {
+        flex-direction: row-reverse;
+    }
+
+    .navbar-section-one > .title,
+    .navbar-section-two > .title,
+    .navbar-section-three > .title {
+        color: #fff;
+    }
+
+    .navbar-section-one > .primary-menu,
+    .navbar-section-two > .primary-menu,
+    .navbar-section-three > .primary-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .primary-menu > .item > .link {
+        color: #fff;
+    }
+
+    .item + .item {
+        margin-left: 1em;
+    }
+
+    .button {
+        display: inline-block;
+        padding: .5em 1.4em;
+        background-color: teal;
+        border-radius: 2em;
+
+    }
+
+    /* .navbar-section-two > .primary-menu > .item:nth-child(3) {
+        margin-right: auto;
+    } */
+
+    .navbar-section-two > .primary-menu {
+        width: 100%;
+    }
+
+    .center {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .center + .item {
+        margin-left: 1em;
+    }
+
+    .primary-menu > .center > .item > .link {
+        color: #fff;
+    }
+
+    .section + .section {
+        margin-top: 1em
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar-section-one section">
+        <h1 class="title">logoberry</h1>
+
+        <ul class="primary-menu">
+            <li class="item"><a href="#" class="link">Services</a></li>
+            <li class="item"><a href="#" class="link">Projects</a></li>
+            <li class="item"><a href="#" class="link">About</a></li>
+            <li class="item"><a href="#" class="link button">Contact</a></li>
+        </ul>
+
+    </div>
+
+    <div class="navbar-section-three section">
+        <h1 class="title">logoberry</h1>
+
+        <ul class="primary-menu">
+            <li class="item"><a href="#" class="link">Services</a></li>
+            <li class="item"><a href="#" class="link">Projects</a></li>
+            <li class="item"><a href="#" class="link">About</a></li>
+            <li class="item"><a href="#" class="link button">Contact</a></li>
+        </ul>
+
+    </div>
+
+    <div class="navbar-section-two section">
+        <h1 class="title">logoberry</h1>
+
+        <ul class="primary-menu">
+            <div class="center">
+                <li class="item"><a href="#" class="link">Services</a></li>
+                <li class="item"><a href="#" class="link">Projects</a></li>
+                <li class="item"><a href="#" class="link">About</a></li>
+            </div>
+            <li class="item"><a href="#" class="link button">Contact</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>

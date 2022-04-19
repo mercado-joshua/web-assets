@@ -1,0 +1,91 @@
+// Sass standards
+
+// 3 levels deep max
+
+.weather {
+  @extends %module; 
+  @include transition(all 0.3s ease);
+
+  > h3 {
+    @include transform(rotate(90deg));
+    border-bottom: 1px solid white;
+  }
+}
+
+Global and Section-Specific Sass Files Are just Table of Contents
+In other words, no styles directly in them. Force yourself to keep all styles organized into component parts.
+
+So the "table of contents" things comes together like:
+
+/* Vendor Dependencies */
+@import "compass";
+
+/* Authored Dependencies */
+@import "global/colors";
+@import "global/mixins";
+
+/* Patterns */
+@import "global/tabs";
+@import "global/modals";
+
+/* Sections */
+@import "global/header";
+@import "global/footer";
+
+Break Into As Many Small Files As Makes Sense
+
+@import "global/header/header/";
+@import "global/header/logo/";
+@import "global/header/dropdowns/";
+@import "global/header/nav/";
+@import "global/header/really-specific-thingy/";
+
+In Deployment, Compile Compressed
+Don't Even Commit .css Files
+Be Generous With Comments
+Variablize All Common Numbers, and Numbers with Meaning
+
+Nest and Name Your Media Queries
+
+.sidebar {
+  float: right;
+  width: 33.33%;
+  @include bp(mama-bear) {
+    width: 25%;
+  }
+}
+
+//** Global styles for blocks on site:
+//## Contact Medical Agent.
+//## Search.
+//## What's new.
+//## Related Formulas.
+//## Other Resources.
+//## Go To Medication Page.
+
+// Contact Medical Agent.
+
+// Core Styling.
+@import "core/base";
+@import "core/theme-variables";
+@import "core/mixins.grid";
+@import "core/mixins.device-size";
+@import "core/mixins.grid-shorthand";
+@import "core/mixins.util";
+@import "core/mixins.retina";
+@import "core/mixins.styles";
+@import "core/fonts";
+@import "core/normalize";
+@import "core/global";
+
+// Layout Styling.
+@import "layout/**/*";
+
+// Components Styling.
+@import "components/**/*";
+
+// Template Styling.
+@import "templates/header-row";
+@import "templates/navigation-row";
+@import "templates/breadcrumb-row";
+@import "templates/footer-row";

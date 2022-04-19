@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// extracting all values of arrays into one array
+const arrOne = ["josh", "richard", "aljon", "aerol", "roy"];
+const arrTwo = ["josh", "areej", "uriel", "alex", "elisha"];
+
+const members = [...arrOne, ...arrTwo];
+
+members.forEach(function (name) {
+    console.log(name);
+});
+
+
+// example 2
+const NUMBERS = [1, 5, 9];
+const add = function (n1, n2, n3) {
+    return n1 + n2 + n3;
+};
+
+console.log(add(...NUMBERS));
+</script>
+</body>
+</html>

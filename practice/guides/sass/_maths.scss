@@ -1,0 +1,17 @@
+$a: 16px;
+$b: 32px;
+$c: 4.5px;
+$eq: 4 - (6 + $b);
+
+.math {
+    width: 5 + 10 + $a - $b * 2 / $c;
+    height: $b % $c;
+    line-height: 4 - (6 + 5);
+    line-height: round(16.777);
+    line-height: floor(16.777);
+    width: percentage(1); // 1 = 100%
+    line-height: abs(-12); // if positive number, remains positive, but if negative, it will turn it to positive
+    width: min(1,2,3,4,5,6,7,10);
+    width: max(1,2,3,4,5,6,7,10);
+    width: random(100) // 1 to 99
+}

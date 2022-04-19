@@ -1,0 +1,127 @@
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculator {
+    background-color: grey;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.screen {
+    padding: 10px;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.functions {
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.functions > .btn {
+    background-color: yellow;
+    border: none;
+    padding: 5px 10px;
+}
+.actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+}
+.actions > .btn {
+    padding: 17px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: none;
+}
+
+.actions > .btn:hover {
+    background-color: palevioletred;
+    color: white;
+}
+
+.actions > .btn:nth-child(8) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.actions > .btn:nth-child(9) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.actions > .btn:nth-child(10) {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.actions > .btn:nth-child(14) {
+    background-color: palevioletred;
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+/* 2nd row */
+.actions > .btn:nth-child(5) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.actions > .btn:nth-child(6) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.actions > .btn:nth-child(7) {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.actions > .btn:nth-child(15) {
+    background-color: palevioletred;
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+
+/* 3rd row */
+.actions > .btn:nth-child(2) {
+    grid-column:1/2;
+    grid-row: 3/4;
+}
+
+.actions > .btn:nth-child(3) {
+    grid-column:2/3;
+    grid-row: 3/4;
+}
+
+.actions > .btn:nth-child(4) {
+    grid-column:3/4;
+    grid-row: 3/4;
+}
+
+.actions > .btn:nth-child(16) {
+    background-color: palevioletred;
+    grid-column:4/5;
+    grid-row: 3/4;
+}
+
+
+

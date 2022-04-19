@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // second parameter of fetch, an object for the settings of api
+
+        // when searching/using api to use,alwys check their documentation
+        // to see what they accept, how data they want to be formated, headers they accept
+
+        const obj = {
+            id: "92oOKusHBd",
+            joke: "Did you hear that the police have a warrant out on a midget psychic ripping people off? It reads “Small medium at large.”"
+        };
+        // post something new data to the api endpoint that can be recorded, th api will send a confirmation back
+        const postDadJoke = async (jokeObj) => {
+            const response = await fetch('https://httpbin.org/post', {
+                method: 'POST', // default, forgetting data
+                headers: { 
+                    'content-type': 'application/json', // tell the api what type of content you are sending
+                },
+                body: JSON.stringify(jokeObj)
+            });
+
+            const jsonResponse = await response.json();
+            console.log(jsonResponse);
+            
+        };
+
+        postDadJoke(obj);
+
+    </script>
+</body>
+</html>

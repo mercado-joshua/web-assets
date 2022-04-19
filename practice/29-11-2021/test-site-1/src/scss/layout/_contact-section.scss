@@ -1,0 +1,25 @@
+@use '../abstracts';
+
+.contact-section {
+    .description {
+        text-align: center;
+    }
+}
+
+.form-section {
+    padding: 0 2em;
+    @include abstracts.set-breakpoint(900px) {
+        padding: 0 5em;
+    }
+
+    .text,
+    .email,
+    .comment {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 1em 1.5em;
+        border-radius: 2em;
+        border: .1em solid #9893d8;
+        color: #f2f2f2;
+    }
+}

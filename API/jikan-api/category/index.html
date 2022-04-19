@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prata&display=swap');
+
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .max-wrapper {
+            max-width: 992px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .imagebox {
+            height: 20em;
+        }
+
+        .imagebox > .image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+            gap: 1.5em;
+        }
+
+        .form-section {
+            padding: 2em 0;
+        }
+
+        .form-section > .input {
+            width: 100%;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="max-wrapper">
+        <form class="form-section" action="" method="get" data-js-form>
+            <input class="input" placeholder="search" type="search" name="searchText">
+        </form>
+        <div class="card-section" data-js-card-section></div>
+    </div>
+    <script src="search-anime.js"></script>
+</body>
+</html>

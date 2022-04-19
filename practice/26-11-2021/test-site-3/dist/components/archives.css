@@ -1,0 +1,22 @@
+.archives {
+  border: 0.5em solid lightgrey;
+  padding: 1em;
+}
+
+.archive-post {
+  border-bottom: 0.1em solid lightgrey;
+}
+.archive-post > .title {
+  padding: 1em 0;
+}
+.archive-post > .image {
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.archive-post:last-child {
+  border: none;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+Promise object is used for asynchronous computations.
+
+represents a value which may be available "now", or in the "future", or "never"
+
+ex. you perform a http request from the server and the server takes 5secs to process the request,
+
+and may the case, the server says:
+
+1. everything is fine and get some data back
+
+2. there's an error, we'll send you a message explaining what was wrong with the request
+
+3. or you wont getting any response beacusethe database was not doing something and you never recieve any response back
+
+to model the situation:
+
+promises states:
+
+pending: initial state, not fulfilled or rejected.
+
+fulfilled: meaning that the operation completed successfully
+
+rejected: meaning that the operation failed
+
+create a promise object:
+
+if fulfilled (.then)
+if rejected (.catch)
+*/
+
+// to create a promise
+
+const promise = new Promise((resolve, reject) => {
+
+    // mimick a request to the server and eithe gat a response back or an error that something went wrong
+
+    // a. callback - this is waht is executed
+    // b. when you want this to invoke, after how many milliseconds
+    setTimeout(() => {
+        resolve("data back from the server");
+    }, 3000);
+
+    setTimeout(() => {
+        reject("no data back from the server, there was an error");
+    }, 5000);
+});
+
+// to use the promise
+  promise.then(response => {
+    console.log(response);
+  }).catch(error => {
+    console.log(error);
+  })  
+</script>
+</body>
+</html>

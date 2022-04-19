@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent-1,
+        .parent-2,
+        .parent-3,
+        .parent-4 {
+            background-color: aqua;
+            outline: 1px dashed red;
+            height: 500px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .parent-1 > *,
+        .parent-2 > *,
+        .parent-3 > *,
+        .parent-4 > * {
+            background-color: rebeccapurple;
+            color: white;
+            outline: 1px solid red;
+        }
+
+        .parent-1 > .child:nth-child(1) {
+            align-self: center;
+        }
+
+        .parent-2 > * {
+            /* width: 100px; */
+
+            flex-grow: 1;
+        }
+
+        .parent-2 > .child:nth-child(1) {
+            flex-grow: 2;
+        }
+
+        .parent-3 > * {
+            /* width: 100px; */
+
+            /* flex-shrink: 1; */
+        }
+
+        .parent-3 > .child:nth-child(1) {
+            flex-shrink: 2;
+        }
+
+        .parent-4 > * {
+            width: 100px;
+
+            /* flex-grow: 1; */
+        }
+
+        .parent-4 > .child:nth-child(1) {
+            flex-basis: 200px;
+
+            order: 1
+        }
+    </style>
+</head>
+<body>
+    <h2>align-items</h2>
+    <div class="parent-1">
+        <div class="child">box 1</div>
+        <div class="child">box 2</div>
+        <div class="child">box 3</div>
+    </div>
+
+    <h2>flex-grow</h2>
+    <div class="parent-2">
+        <div class="child">box 1</div>
+        <div class="child">box 2</div>
+        <div class="child">box 3</div>
+    </div>
+
+    <h2>flex-shrink</h2>
+    <div class="parent-3">
+        <div class="child">box 1</div>
+        <div class="child">box 2</div>
+        <div class="child">box 3</div>
+    </div>
+
+    <h2>flex-basis</h2>
+    <div class="parent-4">
+        <div class="child">box 1</div>
+        <div class="child">box 2</div>
+        <div class="child">box 3</div>
+    </div>
+</body>
+</html>

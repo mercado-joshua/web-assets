@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner</title>
+    <style>
+        *::before,
+        *::after,
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            background-color: #BE634E;
+        }
+
+        /* set .container for grid/layout */
+        .banner.container {
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            grid-template-rows: repeat(3, auto);
+        }
+
+        .image {
+            display: block;
+            height: auto;
+            width: 100%;
+
+            grid-column: 2/span 2;
+            grid-row: 1/span 3;
+        }
+
+        .banner > .title {
+            color: #EDD46F;
+            font-weight: 500;
+            font-size: 40px;
+            letter-spacing: 2px;
+            margin: 0;
+
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+
+        .banner > .description {
+            color: #F4C7B9;
+            font-size: 30px;
+            letter-spacing: 1px;
+            margin: 13px 0;
+
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+
+        .cta-button {
+            display: inline-block;
+            border: none;
+            padding: 10px 17px;
+            font-size: 20px;
+            border-radius: 3px;
+            color: #fff;
+            background-color: rgb(33,73,108);
+
+            grid-column: 1/2;
+            grid-row: 3/4;
+
+            justify-self: flex-start;
+            align-self: flex-start;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner container">
+        <h2 class="title">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit, amet consectetur</h2>
+        <img class="image" src="header-bike.png" alt="">
+        <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus sint sequi tenetur nulla sapiente fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, accusantium!</p>
+        <button class="cta-button">Get your bike</button>
+    </div>
+</body>
+</html>

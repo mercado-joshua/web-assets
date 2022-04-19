@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gallery-3 {
+            border: 1px solid red;
+            background-color: tomato;
+            height: 300px;
+            width: 300px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section {
+            margin: 20px;
+            padding: 20px;
+            outline: 1px dashed red;
+            background-color: thistle;
+        }
+
+        .h2 {
+            padding: 10px;
+            outline: 1px dashed blue;
+            background-color: wheat;
+        }
+
+        .span {
+            padding: 5px;
+            outline: 1px dashed green;
+            display: inline-block;
+            background-color: whitesmoke
+        }
+    </style>
+
+    <!-- using defer, you can now using the script tags in the head -->
+    <script defer src=""></script>
+</head>
+<body>
+    <div class="gallery">
+        <div class="first-child">box 1</div>
+        <div class="second-child">box 2</div>
+        <div class="third-child">box 3</div>
+        <div class="fourth-child">box 4</div>
+        <div class="fifth-child">box 5</div>
+    </div>
+
+    <div id="gallery-2">
+        <div class="sixth-child">box 6</div>
+        <div class="seventh-child">box 7</div>
+        <div class="eight-child">box 9</div>
+        <div class="nineth-child">box 10</div>
+        <div class="tenth-child">box 11</div>
+    </div>
+
+    <div id="gallery-3">
+        <div class="eleventh-child">
+            <h2 class="title">box 12</h2>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="h2"><span class="span">hello</span></h2>
+    </section>
+    <script>
+        // accessing elements
+        const gallery = document.querySelector('.gallery');
+        console.log('gallery', gallery);
+
+        const firstChild = document.querySelector('.first-child');
+        const fifthChild = document.querySelector('.fifth-child');
+
+        // remove element
+        gallery.removeChild(fifthChild);
+
+        // create element
+        const para = document.createElement('p');
+        const text = document.createTextNode('Hello world 1');
+
+        const para1 = document.createElement('p');
+        const text1 = document.createTextNode('Hello world 2');
+
+        para.appendChild(text);
+        gallery.appendChild(para);
+
+        para1.appendChild(text1);
+        gallery.prepend(para1);
+
+
+        // fifthChild.remove();
+
+        console.log('.first-child', firstChild);
+        console.log('firstChild.nextElementSibling', firstChild.nextElementSibling);
+
+        // chaining
+        console.log('firstChild.nextElementSibling.nextElementSibling', firstChild.nextElementSibling.nextElementSibling);
+        console.log('firstChild.previousElementSibling', firstChild.previousElementSibling);
+
+
+        // console.log('firstChild.previousElementSibling', firstChild.previousElementSibling.nextElementSibling); error
+
+        
+
+        // navigating the DOM tree
+        console.log('gallery.children[0]', gallery.children[0]);
+        console.log('gallery.children[0].parentElement', gallery.children[0].parentElement);
+
+        console.log('gallery.children', gallery.children); // only tags
+        console.log('gallery.firstElementChild', gallery.firstElementChild);
+        console.log('gallery.lastElementChild', gallery.lastElementChild);
+        
+        // be careful using this, always check their values in the inspector 
+        console.log('gallery.lastElementChild', gallery.hasChildNodes()); // returns true or false
+        console.log('gallery.childNodes', gallery.childNodes); // tags and their text node
+
+        console.log('gallery.firstChild', gallery.firstChild);
+        console.log('gallery.lastChild', gallery.lastChild);
+
+        console.log('firstChild.nextSibling', firstChild.nextSibling);
+        console.log('firstChild.previousSibling', firstChild.previousSibling);
+
+        // event listener
+        // syntax: addEventListener(event, function, useCapture);
+
+        const gallery2 = document.querySelector('#gallery-2');
+        const first = gallery2.querySelector('.sixth-child');
+
+        console.log(gallery2);
+
+        function clickMe() {
+            alert('hello');
+        }
+
+        first.addEventListener('click', clickMe);
+        first.removeEventListener('click', clickMe);
+
+        first.addEventListener('click', function(event) {
+            console.log(event.target);
+            event.target.textContent = 'Heellooo';
+        });
+
+        document.addEventListener('readystatechange', function(event) {
+            if(event.target.readyState === 'complete') {
+                console.log('readyState: complete'); // this means the page is ready
+                init();
+            }
+        });
+
+        function init() {
+            const seven = gallery2.querySelector('.seventh-child');
+            const eight = gallery2.querySelector('.eight-child');
+            const nine = gallery2.querySelector('.nineth-child');
+
+            const gallery3 = document.querySelector('#gallery-3');
+            const title = document.querySelector('.title');
+
+            seven.addEventListener('click', function(event) {
+                alert('you clicked seven box');
+                console.log('seven');
+            });
+
+            eight.addEventListener('click', function(event) {
+                event.target.style.color = 'red';
+                console.log('eight');
+            });
+
+            nine.addEventListener('click', function(event) {
+                event.target.textContent = 'you clicked nineth box';
+                console.log('nine');
+            });
+
+            gallery3.addEventListener('click', function(event) {
+                event.target.style.backgroundColor = 'blue';
+                console.log('gallery 3');
+            });
+
+            title.addEventListener('click', function(event) {
+                event.target.textContent = 'new text';
+                event.target.style.color = 'red';
+                console.log('title');
+            });
+
+            // event bubbling, when an element's event triggered
+            // when they share the same event.. e.g 'click'
+            // another inside element with event handler
+
+            // 1
+            // innermost event bubbles up to outermost event (event bubbling) (default)
+            // clicked span(event) -> h2(event) -> div(event) to outwards
+
+            // 2
+            // .addEventListener('event', callback, true)
+            // -if it useCapture is set to "true" event bubbling will start from
+            // outermost event to innermost event
+
+            // 3
+            // use .stopPropagation to stop event bubbling to the next element with event
+            // start it to the innermost element's event
+            const section = document.querySelector('.section');
+            const h2 = document.querySelector('.h2');
+            const span = document.querySelector('.span');
+
+            section.addEventListener('click', function(event) {
+                event.target.style.backgroundColor = 'red';
+                console.log(event.target);
+                console.log('section');
+            });
+
+            h2.addEventListener('click', function(event) {
+                event.stopPropagation();
+                event.target.style.backgroundColor = 'blue';
+                console.log(event.target);
+                console.log('h2');
+            });
+
+            span.addEventListener('click', function(event) {
+                event.stopPropagation();
+                event.target.classList.add('purple'); // add another class/not overwriting it
+                event.target.classList.remove('darkblue');
+                event.target.classList.toggle('pink');
+                const myText = event.target.textContent;
+
+                myText === '2nd clicked!'
+                    ? event.target.textContent = '1st click!'
+                    : event.target.textContent = '2nd clicked!';
+                console.log(event.target);
+                console.log('span');
+            });
+        }
+
+
+
+        
+    </script>
+</body>
+</html>

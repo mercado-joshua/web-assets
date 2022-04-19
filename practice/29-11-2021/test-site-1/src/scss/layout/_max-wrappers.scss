@@ -1,0 +1,15 @@
+@use '../abstracts';
+
+// keeps the main content centered
+.max-wrapper {
+    margin: 0 auto;
+    width: min(90%, 1200px); // can be read as { max-width: 1200px; width: 80% }
+
+    @include abstracts.set-breakpoint(600px) {
+        width: min(85%, 1200px);
+    }
+
+    @include abstracts.set-breakpoint(1020px) {
+        width: min(75%, 1200px);
+    }
+}

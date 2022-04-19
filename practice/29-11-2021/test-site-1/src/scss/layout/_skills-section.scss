@@ -1,0 +1,8 @@
+@use '../abstracts';
+.skill-card {
+    grid-column: span 4;
+
+    @include abstracts.set-breakpoint(990px) {
+        grid-column: span 2;
+    }
+}

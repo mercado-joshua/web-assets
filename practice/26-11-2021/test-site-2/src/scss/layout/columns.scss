@@ -1,0 +1,7 @@
+@use '../abstracts';
+
+@include abstracts.breakpoint(920px) {
+    .col + .col {
+        margin-left: 1.5em;
+    }
+}

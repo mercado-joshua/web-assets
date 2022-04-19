@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            background-color: #91A0EB;
+            display: grid;
+            
+            grid-template-rows: 1fr minmax(200px, auto) 1fr;
+
+            /* grid-template-areas: 
+            "header header header"
+            "content content sidebar"
+            "footer footer footer"; */
+
+            grid-template-areas: 
+            "header header sidebar"
+            "content content sidebar"
+            "footer footer sidebar";
+            gap: 5px;
+        }
+
+        @media (min-width: 800px) {
+            .grid {
+                grid-template-areas: 
+                "header header sidebar"
+                "content content sidebar"
+                "footer footer sidebar";
+            }
+        }
+
+        .grid > * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header {
+            background-color: blueviolet;
+            /* grid-column: header; */
+            /* grid-area: header; */
+            grid-area: header-start/content-end;
+        }
+
+        .content {
+            background-color: #ecbe34;
+            /* grid-column: content; */
+            grid-area: content;
+        }
+
+        .sidebar {
+            background-color: burlywood;
+            /* grid-column: sidebar;
+            grid-row: sidebar; */
+            grid-area: sidebar;
+        }
+
+        .footer {
+            background-color: cadetblue;
+            /* grid-column: footer; */
+            grid-area: footer;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="header">here is the header content</div>
+        <div class="content">the page content here</div>
+        <div class="sidebar">sidebar there</div>
+        <div class="footer">here is the footer</div>
+    </div>
+</body>
+</html> 

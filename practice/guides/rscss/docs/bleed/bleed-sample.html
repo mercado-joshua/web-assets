@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .article-link {
+            > .title {}
+            > .count {}
+        }
+
+        .vote-box {
+            > .up {}
+            > .down {}
+            > .count {} // child selectoris preferred
+        }
+    </style>
+</head>
+<body>
+    <article class='article-link'>
+        <div class='vote-box'>
+           <button class='up'></button>
+           <button class='down'></button> 
+           <span class='count'>4</span> <!-- same class -->
+         </div>
+       
+         <h3 class='title'>Article title</h3>
+         <p class='count'>3 votes</p> <!-- same class -->
+    </article>
+</body>
+</html>

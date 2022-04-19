@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #D9D8DA;
+
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #fff;
+            border: 1px solid grey;
+            border-radius: 4px;
+            box-shadow: 0px 0px 7px 0px grey;
+            padding: 3em 2em;
+
+            /* max-width: 1200px;
+            width: 80%; */
+
+            /*
+            * min() - chooses which one is smaller depending on a given time
+            *       - the order ofthe parameter doesn't matter
+            *
+            * use case: you can use min() as a shorthand for:
+            * max-width: 1200px;
+            * width: 80%;
+            *
+            * [1] if the screen size is 450px below, it will use 70%
+            * width: min(500px, 70%);
+            * 
+            * max() - opposite of min(), chooses which one is taller depending on a given time
+            *
+            * ** you can use multiple values
+            * ** create your own use case for this
+            * ** you can nest min and max
+            *    -- min(max(), n)
+            * ** or do math as well
+            *    -- min(500px + 10%, 400px)
+            *
+            * clamp() - only works with three values
+            *         - clamp(minimum, ideal/preferred/middleGround, maximum)
+            *
+            * use case: good for setting font-sizes
+            * p { font-size: clamp(2em, 4vh, 3.2em); }
+            *
+            * use case: hero image
+            * img { width: clamp(800px, 100%, 1200px); }
+            *
+            * use case: content image (floated image)
+            * img { width: clamp(300px, 50%, 600px); }
+            *
+            * use case: limit characters in width
+            * p { width: clamp(45ch, 50%, 75px); }
+            * 
+            */
+            width: min(1200px, 80%);
+        }
+
+        .title {
+            color: tomato;
+            font-size: 2rem;
+        }
+
+        .description {
+            line-height: 1.5em;
+            /* font-size: 1.2rem; */
+
+            background-color: turquoise;
+            width: 50%;
+            /* width: clamp(200px, 50%, 1200px); */
+            font-size: clamp(1.2rem, 5vh, 5rem);
+        }
+
+        /* size */
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        /* @media only screen and (min-width: 600px) {
+            html {
+                font-size: 1.125rem;
+            }
+            
+        } */
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        /* @media only screen and (min-width: 768px) {
+            html {
+                font-size: 1.25rem;
+            }
+
+            .description {
+                font-size: 1.2rem;
+            }
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Lorem ipsum dolor sit amet consectetur.</h2>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequuntur laudantium a magni deserunt temporibus ab obcaecati error eligendi quisquam commodi quidem nostrum reprehenderit ex ullam laboriosam, doloremque numquam eos!</p>
+    </div>
+</body>
+</html>

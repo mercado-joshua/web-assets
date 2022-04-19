@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::after,
+        *::before,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            position: relative;
+            height: 200px;
+            width: 400px;
+            border: 1px dashed grey;
+            background-color: lightgrey;
+        }
+
+        .box-1::before,
+        .box-2::before,
+        .box-3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: pink;
+            transform-origin: top left;
+            transition: transform 500ms ease-in;
+        }
+
+        .box-1:hover::before {
+            transform: rotateZ(50deg);
+        }
+
+        .box-2 {
+            overflow: hidden;
+        }
+        .box-2:hover::before {
+            /*moves the box up by its exact height, no matter what that height is, to the pixel
+            use-case: close-btn outside of dialog box*/
+            transform: translateX(-100%);
+        }
+
+        .box-3 {
+            overflow: hidden;
+        }
+        .box-3:hover::before {
+            transform: translateY(-100%);
+        }
+
+        /*
+        1. ilagay ang transform-origin at transition sa target na element
+        
+        
+        width: max-content = width is matching the text + padding
+            - disadvantage: if there is no room is will break/overflow outside of containing element
+
+        width: min-content = width is matching the most smallest content, e.g longest word
+        [
+        longest |
+        word
+        ]
+
+        - useful for css grids
+
+
+        width: fit-content = works like max-content but if squished works like width: 100%/auto
+        - best of both worlds
+
+
+        * transforms = good for animations / flatten image
+
+
+        scale = squash an element/child element
+
+        transform-origin: acts like a "pivot point"
+
+
+        */
+    </style>
+</head>
+<body>
+    <h2>transform-origin: center</h2>
+    <div class="box box-1"></div>
+
+    <h2>translate: 100% / -100%</h2>
+    <div class="box box-2"></div>
+
+    <h2>translate: 100% / -100%</h2>
+    <div class="box box-3"></div>
+</body>
+</html>

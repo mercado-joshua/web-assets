@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive site practice 1</title>
+    <style>
+        /* general styles */
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        /* author styles */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+
+        }
+
+        .title {
+            margin: 15px 0;
+        }
+
+        .description {
+            line-height: 1.6;
+        }
+
+        /* styles for mobile device */
+        .header {
+            padding: 30px 0;
+        }
+        
+        .nav {
+            background-color: #06B2FF;
+        }
+
+        /* 1st component */
+        .primary-menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        .primary-menu > .item > .link,
+        .quick-links > .item > .link {
+            display: inline-block;
+            padding: 15px;
+            color: #fff;
+        }
+
+        .primary-menu > .item:hover {
+            background-color: #2EC7FF;
+        }
+
+        /* 2nd component */
+        .article-post,
+        .sidebar {
+            margin-top: 1.5em;
+            border: 3px solid #F2F1F2;
+            border-radius: 3px;
+            padding: 20px;
+        }
+
+        .sidebar {
+            margin-bottom: 1.5em;
+        }
+
+        /* 3rd component */
+        .quick-links > .item {
+            background-color: #F2F1F2;
+            border-bottom: 2px solid #fff;
+        }
+        .quick-links > .item > .link {
+            color: #000;
+        }
+
+        .footer {
+            background-color: #F2F1F2;
+        }
+
+        .footer .copyright {
+            margin: 0;
+            padding: 30px 0;
+        }
+
+        /* for tablets, desktop and up */
+        @media (min-width: 768px) {
+            .primary-menu {
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .main-content {
+                display: grid;
+                grid-template-columns: 1fr 250px;
+                gap: 40px;
+            }
+
+            .article-post + .article-post{
+                margin-top: 1.5em;
+            }
+
+            .contentbox.-expanded {
+                display: grid;
+                grid-template-columns: 150px 1fr;
+            }
+
+            .sidebar {
+                align-self: flex-start;
+                margin-bottom: 0;
+            }
+
+            .footer {
+                margin-top: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">mylogo</h1>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <ul class="primary-menu">
+                <li class="item"><a class="link" href="#">Home</a></li>
+                <li class="item"><a class="link" href="#">About us</a></li>
+                <li class="item"><a class="link" href="#">Services</a></li>
+                <li class="item"><a class="link" href="#">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="mainbox">
+        <div class="container">
+            <div class="main-content">
+                <div class="articlebox">
+                    <div class="article-post">
+                        <h2 class="title">Welcome to the course</h2>
+                        <div class="contentbox -expanded">
+                            <img src="image.jpg" alt="">
+                            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut cum, perferendis omnis dolor in nihil laborum facilis, autem quae fugiat accusamus pariatur ipsam iure voluptate laboriosam maxime dolorum temporibus. Velit! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni assumenda eveniet sapiente nihil numquam quasi, accusamus ipsum eius, doloribus facere voluptate porro recusandae, necessitatibus pariatur reiciendis quaerat officia. Quisquam, culpa!</p>
+                        </div>
+                    </div>
+    
+                    <div class="article-post">
+                        <h2 class="title">This is a test article</h2>
+                        <div class="contentbox">
+                            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut cum, perferendis omnis dolor in nihil laborum facilis, autem quae fugiat accusamus pariatur ipsam iure voluptate laboriosam maxime dolorum temporibus. Velit! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni assumenda eveniet sapiente nihil numquam quasi, accusamus ipsum eius, doloribus facere voluptate porro recusandae, necessitatibus pariatur reiciendis quaerat officia. Quisquam, culpa!</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="sidebar">
+                    <h2 class="title">Quick links</h2>
+                    <div class="quicklinksbox">
+                        <ul class="quick-links">
+                            <li class="item"><a href="#" class="link">Blog</a></li>
+                            <li class="item"><a href="#" class="link">Gallery</a></li>
+                            <li class="item"><a href="#" class="link">Products</a></li>
+                            <li class="item"><a href="#" class="link">Career</a></li>
+                            <li class="item"><a href="#" class="link">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">@Copyright 2021 - All rights reserved | Terms & conditions</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// classes are blueprints
+// which you can define properties and behaviours
+class Animal{
+    // this will invoke once
+    constructor(name, age) {
+        // this is where you create the properties
+        this.name = name;
+        this.age = age;
+    }
+
+    eat() {
+        console.log(`${this.name} is eating`);
+    }
+
+    sleep() {
+        console.log(`${this.name} is sleeping`);
+    }
+
+    wakeUp() {
+        console.log(`${this.name} is waking up`);
+    }
+
+    logAge() {
+        console.log(`The age is ${this.age} years old`);
+    }
+}
+
+// instantiate / creating new object
+// const bobby = new Animal("bobby", 2);
+// bobby.eat();
+// bobby.sleep();
+// bobby.wakeUp();
+// bobby.eat();
+// bobby.sleep();
+// bobby.wakeUp();
+
+// you have commom class and extend properties and behaviors from that classes
+class Dog extends Animal {
+    constructor(name, age, breed) {
+        // this "super" will take care of assigning this.name and this.age for you
+        super(name, age);
+        this.breed = breed;
+    }
+
+    getBreed() {
+        console.log(`${this.name} is a ${this.breed}`);
+    }
+
+    logAgeFromDog() {
+        super.logAge();
+    }
+}
+
+const mike = new Dog("mike", 2, "pitbull");
+mike.getBreed();
+mike.logAgeFromDog();
+</script>
+</body>
+</html>

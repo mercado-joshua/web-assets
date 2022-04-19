@@ -1,0 +1,78 @@
+@use '../abstracts';
+
+.header {
+    padding: 1.5em 0;
+    background-color: lightgrey;
+
+    > .container .rowbox > .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include abstracts.breakpoint(500px) {
+            justify-content: center;
+        }
+    }
+
+    .icon {
+        font-size: 2rem;
+
+        @include abstracts.breakpoint(500px) {
+            display: none;
+        }
+    }
+}
+
+.headings > .title,
+.headings > .subtitle {
+    color: blue;
+
+    @include abstracts.breakpoint(500px) {
+        text-align: center;
+    }
+}
+
+.headings > .title {
+    font-size: 1.7rem;
+}
+
+.header .headings > .subtitle {
+    @include abstracts.breakpoint(500px) {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.primary-menu {
+    display: none;
+
+    > .item > .link {
+        text-align: center;
+        padding: .2em 0;
+    }
+
+    > .item {
+        @include abstracts.breakpoint(900px) {
+           margin-left: 1em;
+        }
+    }
+
+    @include abstracts.breakpoint(500px) {
+        display: block;
+        padding-top: 1em;
+    }
+
+    @include abstracts.breakpoint(900px) {
+        display: flex;
+        padding: 0;
+    }
+}
+
+.rowbox {
+    @include abstracts.breakpoint(900px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

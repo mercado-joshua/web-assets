@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        *::before,
+        *::after,
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #BE634E;
+            padding: 5px 0;
+        }
+
+        /* remove the default margin and padding of the menu */
+        .primary-menu {
+            margin: 0;
+            padding: 0;
+
+            /* display: grid;
+            grid-template-columns: repeat(4, 1fr); */
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .primary-menu > .item {
+            list-style: none;
+            text-align: center;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <ul class="primary-menu">
+            <li class="item">price</li>
+            <li class="item">about</li>
+            <li class="item">bikes</li>
+            <li class="item">blogs</li>
+        </ul>
+    </header>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // abstract into functions
+        const getDataFromForm = (fname, lname, category) => {
+            const requestObj = {
+                firstName: fname,
+                lastName: lname,
+                limitTo: category
+            };
+
+            return requestObj;
+        };
+
+        const buildRequestURL = (requestData) => {
+            const {firstName, lastName, limitTo} = requestData;
+            return `http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}&limitTo=${limitTo}`;
+        };
+
+        const getJoke = async (url) => {
+            const response = await fetch(url);
+            const jsonResponse = await response.json();
+            const joke = jsonResponse.value.joke;
+            postJoke(joke); 
+        };
+
+        const postJoke = (joke) => {
+            console.log(joke);
+        };
+
+        // procedural workflow function
+        const processJoke = async (fname, lname, category) => {
+            const requestData = getDataFromForm(fname, lname, category);
+            const requestURL = buildRequestURL(requestData);
+            
+            await getJoke(requestURL);
+            console.log('---finished---');
+        };
+
+        processJoke('bruce', 'lee', ['nerdy']);
+    </script>
+</body>
+</html>

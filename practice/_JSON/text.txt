@@ -1,0 +1,64 @@
+json - to make computers communicate with each other
+json is portable with other languages
+yaml and xml
+
+
+
+
+{
+    language: [
+        {
+            name: 'josh', // data set
+            age: 23
+        },
+        {
+            name: 'josh',
+            age: 23
+        }
+    ]
+}
+
+// build on two structures
+
+// 1. a collection of name/value pairs = object
+// 2. an ordered list of values = array
+
+
+//
+https://automationstepbystep.com/
+// api mocking
+https://www.youtube.com/playlist?list=PLhW3qG5bs-L_dJ0YvpKE0m-VK6WRsXDTp
+
+## validate json
+1. how to check if your json is valid?
+- use json linter, formatter, beautifier online
+2. how to find errors?
+
+## what is json path?
+how to create json path?
+
+jsonPath is a query language for json
+similar to Xpath in xml
+
+jsonPath helps to parse a json data
+
+e.g what you see in the chrome console
+
+
+$.users[0].name
+
+
+## json schema
+defines the structure of a json message
+
+use json to json schema converter online
+
+JSON.stringify() - object to string
+JSON.parse() - string to object
+
+
+
+https://site.com/pdf/edit/add - endpoint
+
+
+ 

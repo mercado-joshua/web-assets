@@ -1,0 +1,15 @@
+.highlight {
+    &.-tomato {
+        font-weight: bold;
+        color: tomato;
+    }
+
+    &.-white {
+        font-weight: bold;
+        color: white;
+    }
+
+    &.-bold {
+        font-weight: bolder;
+    }
+}

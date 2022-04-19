@@ -1,0 +1,42 @@
+{
+    "users": [
+        {
+            "firstname": "joshua",
+            "lastname": "mercado",
+            "age": 23,
+            "location": "pampanga",
+            "single": true,
+            "middle name": null
+        },
+        {
+            "firstname": "richard",
+            "lastname": "dayrit",
+            "age": 24,
+            "location": "pampanga",
+            "hobbies": ["reading", "writing", "coding"],
+            "friends": [
+                { "name": "uriel" },
+                { "name": "areej" },
+                { "name": "alex" },
+                { "name": "elisha" }
+            ]
+        },
+        {
+            "firstname": "aljon",
+            "lastname": "valen",
+            "age": 25,
+            "location": "pampanga"
+        }
+    ],
+    "subjects": [
+        {
+            "math": 50.0
+        },
+        {
+            "science": 60.0
+        },
+        {
+            "mapeh": 50.0
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="load();">
+
+    <div id="gallery" class="gallery">
+        <img src="" alt="" class="picture">
+    </div>
+    <script>
+        function load() {
+            // let gallery = document.getElementById('gallery');
+            // gallery.getElementsByTagName('img')[0].src = pictures[0];
+            changePic(0);
+        }
+
+        // this is a closure
+        function changePic(n) {
+            let gallery = document.getElementById('gallery');
+            gallery.getElementsByTagName('img')[0].src = pictures[n % pictures.length];
+
+            setTimeout(function() {
+                changePic(n + 1);
+            }, 5000);
+        }
+
+        let pictures = [];
+
+        for (let index = 1001; index <= 1010; index++) {
+            let picture = `https://picsum.photos/id/${index}/200/300`;
+            pictures.push(picture);
+        }
+
+        console.log(pictures);
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            position: relative;
+        }
+
+        .box-1 {
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: tomato;
+
+            animation-name: grow-1;
+            animation-duration: 3s; /* how long the animation will run */
+
+            animation-delay: 2s; /* delays time before animation starts */
+            animation-iteration-count: infinite; /* specify how many times you want the animation run*/ 
+        }
+
+        /* define the steps the animation go through */
+
+        /*
+        two ways:
+
+        1. from start to finish
+        2. using percentages
+        */
+        @keyframes grow {
+            /* starting animation properties */
+            from {
+                /* you have to type the deafuakt values you want to change later */
+                height: 100px;
+                width: 100px;
+                background-color: tomato;
+            }
+
+            to {
+                height: 20px;
+                width: 20px;
+                background-color: turquoise;
+            }
+
+            /* ending animation properties */
+        }
+
+        /* using percentages: to know what part of the animation you want to change */
+        @keyframes grow-1 {
+            0% {
+                height: 100px;
+                width: 100px;
+                background-color: tomato;
+            }
+
+            50% {
+                height: 60px;
+                width: 100px;
+                background-color: yellowgreen;
+            }
+
+            100% {
+                height: 20px;
+                width: 20px;
+                background-color: turquoise;
+            }
+        }
+
+        .box-2 {
+            position: absolute;
+
+            right: 0;
+
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: blue;
+
+            animation-name: task;
+            animation-duration: 3s;
+        }
+
+        @keyframes task {
+            from {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+
+            to {
+                width: 20px;
+                height: 20px;
+                background-color: red;
+            }
+        }
+
+        /* how the animations behave and animations direction */
+        .box-3 {
+            position: absolute;
+
+            top: 200px;
+
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: pink;
+
+            animation-name: test;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.71, -0.26, 0.4, 1.3); /* specifies the speed of the animation */
+
+            animation-direction: alternate-reverse; /* specifies how your animation will play out */
+
+            /*
+            normal (dafault) - from start to finish
+            reverse - finish to start
+
+            alternate
+            alternate-reverse
+            */
+
+
+            /* specifies what styles youwant to apply, after the animation is complete. it depends on the direction and iteration count (tip: remove the iteration and direction to avoid being confused) */
+            animation-fill-mode: forwards;
+
+            /*
+            forwards: apply the last style in the keyframes
+            backwards: apply the first style in the keyframes
+            both: depends which which styles will end, to be used with alternate, alternate-reverse
+            */
+
+            /*
+            SHORTHAND:
+            animation: [name] [duration] [timing-function] [delay] [direction] [iteration]
+            
+            */
+        }
+
+        @keyframes test {
+            from {
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+            }
+
+            to {
+                width: 200px;
+                height: 200px;
+                background-color: tomato;
+            }
+        }
+
+        .box-4 {
+            position: absolute;
+
+            top: 200px;
+            left: 300px;
+
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: teal;
+
+            animation: move 1s ease-in 0s alternate infinite;
+        }
+
+        @keyframes move {
+            from {
+                left: 600px;
+            }
+
+            to {
+                left: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+    <div class="box-3"></div>
+    <div class="box-4"></div>
+</body>
+</html>

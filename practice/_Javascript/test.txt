@@ -1,0 +1,245 @@
+#variables
+#arrays
+#objects
+#loops
+#functions
+#conditional statements
+
+
+
+#event handling
+#objects & OOP
+#DOM
+#localStorage/sessionStorage
+#window.reload()/replace()
+
+#FETCH
+
+setInterval() - calls a function or evaluates an expression at specified intervals (in milliseconds)
+
+- continues calling the function until clearInterval is called, or the window is closed
+
+setInterval(function(), milliseconds)
+
+clearInterval(func())
+
+setTimeout() - sets a delay before executing code
+
+#objects & OOP
+----------------
+string.length;
+string.toUppercase()
+
+// constructor function
+function computer(processor, ram) {
+    this.processor = processor;
+    this.ram = ram;
+
+    this.years = yearsLeft; // method
+}
+
+function yearsLeft() {
+    let remaining - this.ram;
+    return remaining
+}
+
+let dell = new computer('i5', '4gb');
+
+dell.processor;
+dell.ram;
+dell.years()
+
+(PREFERRED)
+let dell = {
+    'properties': 'i5',
+    'ram': '4gb'
+};
+
+#conditional statements
+----------------
+&&
+
+||
+
+!
+
+===
+!==
+>
+<
+<=
+=>
+
+
+if() {}
+else if() {}
+else {}
+
+switch(){
+    case:
+    break;
+    default:
+}
+
+#variables
+----------------
+NaN - not a Number
+
+null
+
+undefined = var name; // initialized but not setting a number
+
+var
+
+let (PREFERRED)
+const (PREFERRED)
+
+#arrays
+----------------
+
+let arr = ['a', 'b', 'c']; (PREFERRED)
+arr[2]
+
+var arr = new Array('Joshua', 23);
+
+.join()
+.concat()
+.sort() // alphabetically
+.push() // insert item to the last slot in array
+.pop() // delete last element of array
+
+#objects
+----------------
+
+let obj = new Object();
+obj['keyname'] = 'value'
+
+let functions = {
+    'function1' : function() {},
+    'function2' : function() {}
+};
+
+functions.function1();
+functions.function2();
+
+#loops
+----------------
+
+for() {}
+while() {}
+
+break;
+continue;
+
+#functions
+----------------
+
+*closures - function within function
+*global scope
+*local scope
+
+function() {}
+
+const func = () = {}; (PREFERRED)
+
+#events
+----------------
+
+addEventListener() (PREFERRED)
+
+onclick="func()"
+onerror="func()"
+onmouseover="func(this)" mouse enters
+onmouseout="func(this)" mouse leaves
+
+onmousedown = when left mouse btn is clicked/pressed
+onmouseup = when left mouse btn was released
+
+onsubmit="func()" - <form> - checks the input values, not printing them
+onload="func()" - <body> Function to call when the document has finished loading.
+
+onfocus - opposite of "onblur" - triggers when you enter the input field
+onblur - triggers when you leave the input field
+
+onkeydown - when you press any keys in the keyboard
+onkeyup - when you lift your finger after pressing any keyboard keys
+onkeypress - combination of the two(onkeydown, onkeyup)
+
+onchange="func(this.value)" - for <select>
+
+#DOM
+----------------
+
+alert();
+prompt();
+
+document.write();
+
+document.querySelector() (PREFERRED)
+
+document.getElementById()
+document.getElementById().className = 'newClassName';
+
+variable = input.value
+
+element.innerHTML = variable
+element.innerText = variable
+
+
+
+#localstorage / sessionstorage
+----------------
+
+
+localStorage.setItem();
+localStorage.getItem();
+localStorage.removeItem();
+localStorage.clear();
+
+sessionStorage.setItem();
+sessionStorage.getItem();
+sessionStorage.removeItem();
+sessionStorage.clear();
+
+
+#navigation
+----------------
+
+window.location.replace('newURL'); (NOT WORKING, READ ONLY)
+window.location.reload();
+
+Number()
+parseInt()
+Math.random()
+Math.floor()
+
+
+
+
+
+
+
+
+
+
+
+#####FETCH
+----------------
+
+function test() {
+    let formdt = new FormData();
+
+    formdt.append('tst', '');
+
+    return fetch('yourURL', {
+        credentials: 'omit',
+        method: 'POST',
+        body: formdt,
+        headers: new Headers({
+            'testheader': ''
+        })
+    }).then(response => response.text()).catch(e => console.log(e));
+}
+
+
+

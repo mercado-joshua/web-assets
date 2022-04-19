@@ -1,0 +1,19 @@
+.footer {
+    background-color: darkblue;
+    padding: 2em 0;
+
+    & .headings > .title,
+    & .headings > .subtitle {
+        color: #fff;
+        text-align: center;
+    }
+
+    & .headings > .subtitle {
+        display: inline-block;
+        width: 100%;
+    }
+
+    & .headings > .title {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,17 @@
+.button {
+    display: inline-block;
+    border: none;
+    padding: .7em 2em;
+    border-radius: .3em;
+    background-color: #fff;
+}
+
+.button + .button {
+    margin-left: 1em;
+}
+
+.button:focus,
+.button:hover {
+    background-color: tomato;
+    color: #fff;
+}

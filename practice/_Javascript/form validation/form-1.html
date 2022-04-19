@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>form validation 1</h2>
+    <form action="" name="form1" onsubmit="return validate();">
+        <input type="text" name="firstname" id="">
+        <input type="email" name="email">
+
+        <input type="text" name="num">
+
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        // const formm = document.forms.form1;
+        // const fname = formm.elements.firstname.value;
+        // const email = formm.elements.email.value;
+        // const num = formm.elements.num.value;
+
+
+        const fname = document.form1.firstname.value;
+        const email = document.form1.email.value;
+        const num = document.form1.num.value;
+
+        function validateUsername() {
+            let valid = false;
+            const fname = document.form1.firstname.value;
+
+            const exp = '/^[A-Za-z]+$/';
+
+            var result = exp.test(fname);
+
+            if(valid) {
+                window.alert('validation successful');
+                return true;
+            } else {
+                window.alert('fname is empty');
+                document.forms.form1.elements.fname.focus();
+                return false;
+            }
+        }
+
+        function validate() {
+            if(fname == '') {
+                window.alert('fname is empty');
+                document.forms.form1.elements.fname.focus();
+                return false;
+            }
+            
+            else if(email == '') {
+                window.alert('email is empty');
+                document.forms.form1.elements.email.focus();
+                return false;
+            } 
+
+            // number
+            else if(isNaN(num) || num < 1 || num > 10) {
+                window.alert('please enter a vlaid number from 1 to 10');
+                document.forms.form1.elements.num.focus();
+                return false;
+            }
+
+            else {
+                window.alert('validation successful');
+                return true;
+            }
+        }
+
+        // const validate = () => {
+        //     if(fname == '') {
+        //         window.alert('fname is empty');
+        //         document.forms.form1.elements.fname.focus();
+        //         return false;
+        //     }
+            
+        //     else if(email == '') {
+        //         window.alert('email is empty');
+        //         document.forms.form1.elements.email.focus();
+        //         return false;
+        //     } 
+
+        //     // number
+        //     else if(isNaN(num) || num < 1 || num > 10) {
+        //         window.alert('please enter a vlaid number from 1 to 10');
+        //         document.forms.form1.elements.num.focus();
+        //         return false;
+        //     }
+
+        //     else {
+        //         window.alert('validation successful');
+        //         return true;
+        //     }
+
+        //     // // checkbox
+        //     // let value = false;
+        //     // if(document.getElementById('javascript').checked) {
+        //     //     value = true;
+        //     // } else if(document.getElementById('jquery').checked) {
+        //     //     value = true;
+        //     // }
+
+        //     // if(value) {
+        //     //     window.alert('validation successful');
+        //     //     return true;
+        //     // } else {
+        //     //     window.alert('please select at least one');
+        //     //     return false;
+        //     // }
+
+        //     // // radio
+        //     // let valid = false;
+        //     // const radiobtn = document.form1.elements.paymentMethod;
+
+        //     // for(let i = 0; i < radiobtn.length; i++) {
+        //     //     if(radiobtn[i].checked) {
+        //     //         valid = true;
+        //     //     }
+        //     // }
+
+        // };
+    </script>
+</body>
+</html>

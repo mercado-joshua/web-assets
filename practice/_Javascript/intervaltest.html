@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body onload="loadingText();">
+    <p class="para"></p>
+
+    <form action="" onsubmit="submitted()">
+        <input id="big" class="big" type="text" onblur="makeItBig();">
+        <input type="submit" value="submit">
+    </form>
+
+
+    <div class="box" onmouseenter="enlarge(this);" onmouseout="normal(this);"></div>
+    <script>
+        const para = document.querySelector('.para');
+        function generateRandom() {
+            let value =  Math.floor(Math.random() * 50) + 1;
+            para.innerHTML = value;
+        }
+
+        // setInterval(generateRandom, 1000);
+
+        // setTimeout(generateRandom, 5000);
+
+
+        function setColor() {
+            let x = document.body;
+
+            x.style.backgroundColor = x.style.backgroundColor == 'yellow'? 'pink': 'yellow';
+        }
+
+        let myColor = setInterval(setColor, 300);
+
+        function stopColor() {
+            clearInterval(myColor);
+        }
+
+        setTimeout(stopColor, 10000);
+
+        function enlarge(x) {
+            x.style.height = '200px';
+            x.style.width = '200px';
+        }
+
+        function normal(x) {
+            x.style.height = '100px';
+            x.style.width = '100px';
+        }
+
+        function submitted() {
+            alert('the form was submitted');
+        }
+
+        function loadingText() {
+            para.innerHTML = 'loading... please wait';
+        }
+
+        function makeItBig() {
+            const big = document.getElementById('big');
+        }
+
+
+    </script>
+</body>
+</html>

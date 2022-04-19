@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+            /* outline: 1px dashed palevioletred; */
+        }
+
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        .holy-grail {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .header,
+        .footer {
+            background-color: #AEACAE;
+            padding: 40px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .section {
+            min-height: 100vh;
+            /* outline: 1px dashed palevioletred; */
+
+            display: flex;
+            gap: 5px;
+        }
+
+        .section > * {
+            background-color: #AEACAE;
+            /* outline: 1px dashed indigo; */
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .maincontent {
+            flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="holy-grail">
+        <header class="header">
+            this is header
+        </header>
+
+        <section class="section">
+            <div class="sidebar1">sidebar 1</div>
+            <div class="maincontent">main content</div>
+            <div class="sidebar2">sidebar 2</div>
+        </section>
+
+        <footer class="footer">
+            this is footer
+        </footer>
+    </div>
+</body>
+</html>

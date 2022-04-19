@@ -1,0 +1,36 @@
+/* variables */
+
+/* resets */
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* fonts & typography */
+
+/* base styles */
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* buttons */
+.button {}
+
+.button:focus,
+.button:hover {}
+
+/* layout */
+
+/* mobile styles */
+
+/* small tablet styles: 920px */
+/* large tablet & small laptop styles: 960px */
+/* desktop styles: 1200px */

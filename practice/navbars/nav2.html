@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .navbar-section {
+            background-color: blanchedalmond;
+            padding: 10px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .nav-section {
+            background-color: blanchedalmond;
+            padding: 10px;
+            height: 100vh;
+
+            display: none;
+        }
+
+        .nav-section.open {
+            display: block;
+        }
+
+        @media (min-width: 600px) {
+            .menu {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar-section">
+        <h1 class="logo">Logo</h1>
+        <a class="menu" href="#">Menu</a>
+    </div>
+    <nav class="nav-section">
+        <ul class="primary-menu">
+            <li class="item"><a class="link" href="#">Item 1</a></li>
+            <li class="item"><a class="link" href="#">Item 2</a></li>
+            <li class="item"><a class="link" href="#">Item 3</a></li>
+            <li class="item"><a class="link" href="#">Item 4</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const toggle = document.querySelector('.menu');
+        const navbar = document.querySelector('.nav-section');
+
+        toggle.addEventListener('click', () => {
+            navbar.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

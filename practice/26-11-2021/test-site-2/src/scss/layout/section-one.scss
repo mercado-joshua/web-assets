@@ -1,0 +1,32 @@
+@use '../abstracts';
+
+.section-one .container {
+    padding: 1.5em 0;
+
+    @include abstracts.breakpoint(920px) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    > .sidebar {
+        background-color: rgb(16, 43, 16);
+        color: #fff;
+        padding: .5em 1em;
+    
+        @include abstracts.breakpoint(920px) {
+            flex: 1;
+        }
+    }
+
+    > .article-one {
+        @include abstracts.breakpoint(920px) {
+            flex: 1;
+        }
+    }
+
+    > .article-two {
+        @include abstracts.breakpoint(920px) {
+            flex: 2;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        *::before,
+        *::after,
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+        
+        .section > .title {
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 500;
+            color: #34506C;
+        }
+
+        .section > .description {
+            background-color: #BE634E;
+            color: #F4C7B9;
+            font-size: 30px;
+            letter-spacing: 1px;
+            line-height: 1.4em;
+            margin: 0;
+            padding: 40px 70px;
+            text-align: center;
+        }
+
+        @media (min-width: 800px) {
+            .section {
+                display: grid;
+                grid-template-columns: 1fr 50px 1fr;
+                /* grid-template-rows: auto 50px auto 50px; */
+                grid-template-rows: repeat(2, auto 50px);
+            }
+
+            .section > .title {
+                grid-column: 1/span 3;
+                grid-row: 1/span 1;
+            }
+
+            .section > .description {
+                grid-column: 2/span 2;
+                grid-row: 3/span 2;
+            }
+
+            .section > .image{
+                grid-column: 1/span 2;
+                grid-row: 2/span 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section container">
+        <h2 class="title">Meet your bike</h2>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime eum voluptate sed iusto consequatur? Dignissimos aperiam in voluptatum odio provident.</p>
+        <img class="image" src="bike-1.jpg" alt="">
+    </section>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // named exports allow you to you to create functions that allow you to export multiple values
+    // a function,object,class or variable
+
+    // named imports allow you to import those values from the mpdules
+    import * as Math from './math';
+
+    console.log(Math.add(2, 4));
+
+    // or
+    import {add, sub, pi} from './math';
+
+    console.log(add(2, 4));
+    console.log(sub(2, 4));
+    console.log(pi);
+
+</script>
+</body>
+</html>

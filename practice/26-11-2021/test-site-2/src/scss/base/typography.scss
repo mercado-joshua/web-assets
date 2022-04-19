@@ -1,0 +1,19 @@
+@use '../abstracts';
+
+html {
+    @include abstracts.breakpoint(768px) {
+        font-size: 1.125rem;
+    }
+
+    @include abstracts.breakpoint(920px) {
+        font-size: 1.25rem;
+    }
+}
+
+.title {
+    color: rgb(37, 61, 21);
+}
+
+.description {
+    line-height: 1.6em;
+}

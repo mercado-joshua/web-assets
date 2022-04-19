@@ -1,0 +1,11 @@
+.highlight.-tomato {
+  font-weight: bold;
+  color: tomato;
+}
+.highlight.-white {
+  font-weight: bold;
+  color: white;
+}
+.highlight.-bold {
+  font-weight: bolder;
+}

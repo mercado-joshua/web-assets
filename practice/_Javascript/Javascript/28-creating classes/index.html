@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// classes are blueprints
+// which you can define properties and behaviours
+class Animal{
+    // this will invoke once
+    constructor(name, age) {
+        // this is where you create the properties
+        this.name = name;
+        this.age = age;
+    }
+
+    eat() {
+        console.log(`${this.name} is eating`);
+    }
+
+    sleep() {
+        console.log(`${this.name} is sleeping`);
+    }
+
+    wakeUp() {
+        console.log(`${this.name} is waking up`);
+    }
+}
+
+// instantiate / creating new object
+const bobby = new Animal("bobby", 2);
+bobby.eat();
+bobby.sleep();
+bobby.wakeUp();
+bobby.eat();
+bobby.sleep();
+bobby.wakeUp();
+</script>
+</body>
+</html>

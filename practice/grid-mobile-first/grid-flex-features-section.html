@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        *::before,
+        *::after,
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            background-color: #F5F4F6;
+        }
+
+        .description {
+            color: #7B8792;
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: 1.3em;
+        }
+        
+        @media (min-width: 800px) {
+           .section.container {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+           }
+
+           .feature {
+               display: flex;
+           }
+        }
+    </style>
+</head>
+<body>
+    <section class="section container">
+        <div class="feature">
+            <img src="/icons/bike.svg" alt="" class="img">
+            <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia voluptatem nihil cupiditate, totam suscipit quam modi maxime veritatis eum dolores labore nostrum facere accusamus temporibus error. Unde ullam ipsa dicta.</p>
+        </div>
+        <div class="feature">
+            <img src="/icons/Gauge.svg" alt="" class="img">
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores corporis possimus voluptatem quam eius maiores deserunt, incidunt minus laborum explicabo reprehenderit sequi ut amet necessitatibus perferendis porro minima modi laboriosam. Quibusdam voluptatibus aliquid libero natus debitis nostrum sint eius reprehenderit veniam aut, ipsa pariatur cum voluptatem iure, adipisci dignissimos nulla? Repellat iure, amet et culpa ducimus eaque sit quos ipsum!</p>
+        </div>
+        <div class="feature">
+            <img src="/icons/speed.svg" alt="" class="img">
+            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum similique error possimus voluptates. Eveniet nam voluptatem incidunt laborum corrupti eligendi consectetur perferendis vero exercitationem, dolor nihil repellendus aliquid quasi, animi odit velit. Ad, debitis doloremque sapiente rerum vero voluptas quia nisi, repudiandae in sunt ullam non dolorum iste, numquam error tempore voluptates quisquam ea fuga omnis tenetur magnam? Excepturi laudantium, quibusdam cum nam provident vel accusantium fugit praesentium explicabo est?</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+            /* outline: 1px dashed palevioletred; */
+        }
+
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        .holy-grail {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .header,
+        .footer {
+            background-color: #AEACAE;
+            padding: 40px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .section {
+            min-height: 100vh;
+            /* outline: 1px dashed palevioletred; */
+
+            display: flex;
+            gap: 5px;
+        }
+
+        .section > * {
+            background-color: #AEACAE;
+            text-align: center;
+        }
+
+        /* sinet nya muna ung weight */
+        .sidebar1,
+        .sidebar2 {
+            flex-basis: 200px;
+        }
+
+        /* tapos sya ung kukuha ng lahat ng space na matitira */
+        .maincontent {
+            flex: 1;
+        }
+
+        /* since iba ung pagkaka-ayos sa html, aayusin sya dito gamit ang "order" property  */
+        .sidebar2 {
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="holy-grail">
+        <header class="header">
+            this is header
+        </header>
+
+        <section class="section">
+            <div class="sidebar1">sidebar 1</div>
+            <div class="sidebar2">sidebar 2</div>
+            <div class="maincontent">main content</div>
+        </section>
+
+        <footer class="footer">
+            this is footer
+        </footer>
+    </div>
+</body>
+</html>

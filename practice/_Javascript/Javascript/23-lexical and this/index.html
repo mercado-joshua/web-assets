@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // lexical this
+const person = {
+    name: 'josh',
+    cars: ['jeep', 'ferrari'],
+    toString: function () { // dont use arrow function here
+        console.log(`${this.name} has ${this.cars}`);
+
+        // this.cars.forEach(function (car) {
+        //     // the this.name no longer refers to name property
+        //     console.log(`${this.name} has ${car}`);
+        // });
+
+        // use arrowfunction to bind the actual object to the "this" keyword
+        this.cars.forEach(car => console.log(`${this.name} has ${car}`));
+    }
+};
+
+person.toString();
+</script>
+</body>
+</html>

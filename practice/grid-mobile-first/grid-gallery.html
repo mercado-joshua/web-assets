@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        *::before,
+        *::after,
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .gallery > .title {
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 500;
+            color: #34506C;
+        }
+
+        @media (min-width: 800px) {
+           .gallery.container {
+               display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+               gap: 10px
+           }
+
+           .gallery > .title {
+                grid-column: 1/-1;
+           }
+
+           .gallery > .image {
+               height: 100%;
+               object-fit: cover;
+               object-position: center;
+           }
+
+           /* .gallery > .image:nth-child(1),
+           .gallery > .image:nth-child(5),
+           .gallery > .image:nth-child(8) {
+               grid-row: span 2;
+           } */
+
+           .gallery > .image:nth-child(2),
+           .gallery > .image:nth-child(5) {
+               grid-row: span 2;
+           }
+
+
+           /* .gallery > .image:last-of-type {
+                grid-row: span 2;
+                grid-column: span 2;
+           } */
+        }
+    </style>
+</head>
+<body>
+   <div class="gallery container">
+       <h2 class="title">Meet your bike</h2>
+       <img src="/bike-1.jpg" alt="" class="image">
+       <img src="/bike-2.jpg" alt="" class="image">
+       <img src="/bike-3.jpg" alt="" class="image">
+       <img src="/bike-4.jpg" alt="" class="image">
+       <img src="/bike-5.jpg" alt="" class="image">
+       <img src="/bike-6.jpg" alt="" class="image">
+       <img src="/bike-7.jpg" alt="" class="image">
+       <img src="/bike-1.jpg" alt="" class="image">
+       <img src="/bike-2.jpg" alt="" class="image">
+   </div>
+</body>
+</html>

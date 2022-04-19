@@ -1,0 +1,55 @@
+// inherit element
+#parent {
+    color: blue;
+
+    #child-one {
+        color: greenyellow;
+    }
+
+    #child-two {
+        color: greenyellow;
+
+        #content p {
+            color: rebeccapurple;
+        }
+
+        #content-one, #content-two, #content-three {
+            color: rebeccapurple;
+        }
+    }
+
+    #child-three, #child-four, #child-five {
+        color: greenyellow;
+    }
+
+    &.hasAlsoClass {
+        color: rosybrown;
+    }
+}
+
+// inherited selector
+
+// properties you like to share with multiple selectors
+%shared {
+    border: 1px solid black;
+    background-color: chocolate;
+    color: white;
+    padding: 10px;
+}
+
+p %shared span {
+    color: red;
+}
+
+#contents-one { @extend %shared; }
+
+#contents-two { @extend %shared; }
+
+#contents-three, .contents-four { @extend %shared; }
+
+#contents-five { 
+    @extend %shared;
+    border: none;
+    border-bottom: 1px solid red; 
+}
+

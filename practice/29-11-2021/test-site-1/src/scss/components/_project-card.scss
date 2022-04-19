@@ -1,0 +1,18 @@
+@use '../abstracts';
+
+.project-card {
+    .imagebox {
+        max-width: 40%; 
+    }
+
+    .contentbox > .subtitle {
+        margin: 0;
+        padding: 0 1em;
+        font-weight: 400;
+        color: #9994f7;
+
+        @include abstracts.set-breakpoint(768px) {
+            padding: 1em;
+        }
+    }
+}

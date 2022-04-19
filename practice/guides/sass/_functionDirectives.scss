@@ -1,0 +1,21 @@
+// create your own functions
+$headers: h1, h2, h3, h4, h5, h6;
+$fonts: 1px, 2px, 3px, 4px, 5px, 6px;
+
+@function list-match($argOne, $argTwo) {
+
+    // scoping
+    $head_len: length($argOne);
+    $font_len: length($argTwo);
+
+    @if $head_len == $font_len {
+        @return "Yup";
+    }
+    @else {
+        @return "Nope";
+    } 
+}
+
+.function {
+    content: list-match($headers, $fonts);
+}

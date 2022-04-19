@@ -1,0 +1,26 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "project one",
+            "description": "dummy description for this project",
+            "tags": ["responsive", "api", "animation"],
+            "image": "http://localhost:8080",
+            "url": {
+                "demo": "http//localhost:8080",
+                "code": "http//localhost:8080"
+            }
+        },
+        {
+            "id": 1,
+            "name": "project one",
+            "description": "dummy description for this project",
+            "tags": ["responsive", "api", "animation"],
+            "image": "http://localhost:8080",
+            "url": {
+                "demo": "http//localhost:8080",
+                "code": "http//localhost:8080"
+            }
+        }
+    ]
+}

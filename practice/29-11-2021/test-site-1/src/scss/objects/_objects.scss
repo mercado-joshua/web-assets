@@ -1,0 +1,47 @@
+@use '../abstracts';
+
+// images
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: .2em solid abstracts.$color-primary;
+}
+
+// icons
+
+.menubar {
+    font-size: 2rem;
+    margin-left: auto; // a bugfix: flexbox thinks a "display: none" .primary-menu still exists 
+
+    @include abstracts.set-breakpoint(750px) {
+       display: none;
+    }
+}
+
+// typography
+
+.maintitle {
+    font-size: 1.2rem;
+
+    @include abstracts.set-breakpoint(740px) {
+        font-size: 2rem;
+    }
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.description {
+    line-height: 1.5em;
+    color: #9893b8;
+}
+
+// sections
+
+.section-padding {
+    padding: 1.5em 0;
+}

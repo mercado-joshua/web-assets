@@ -1,0 +1,45 @@
+@use '../abstracts';
+
+.banner-section {
+    background-color: #CB5F49;
+
+    @include abstracts.set-breakpoint(600px) {
+        position: relative;
+    }
+
+    &::before {
+        @include abstracts.set-breakpoint(600px) {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #C77C6A;
+            height: 100%;
+            width: 50%;
+            z-index: 1;
+        }
+    }
+}
+
+.header-section {
+    padding: 1em 0;
+    background-color: #C77C6A;
+
+    @include abstracts.set-breakpoint(600px) {
+        position: relative;
+        z-index: 2;
+        background-color: transparent;
+    }
+}
+
+.primary-menu {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.banner {
+    @include abstracts.set-breakpoint(600px) {
+        position: relative;
+        z-index: 2;
+    }
+}

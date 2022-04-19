@@ -1,0 +1,48 @@
+@use '../abstracts';
+
+.advertise-section {
+    padding-bottom: 2em;
+
+    > .title {
+        text-align: center;
+        text-transform: uppercase;
+        color: #10486C;
+        margin-bottom: 1em;
+    }
+
+    > .description {
+        background-color: #CB5F49;
+        color: #fff;
+        padding: 3em 2em;
+        margin: 0;
+
+        // stretchs the content out of the parent's limited width
+        // https://css-tricks.com/full-width-containers-limited-width-parents/
+        &.-full-width {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        // at 600px, bring it all back to normal, to give way to being "grid"
+        @include abstracts.set-breakpoint(600px) {
+            padding-left: 4.5em;
+
+            &.-full-width {
+                width: unset;
+                position: unset;
+                left: unset;
+                right: unset;
+                margin-left: unset;
+                margin-right: unset;
+            }
+        }
+    }
+
+    @include abstracts.set-breakpoint(600px) {
+        padding-bottom: 5em;
+    }
+}

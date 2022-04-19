@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alt-nav-links {
+            & {
+                @include unstyle-list();
+                display: inline-block;
+            }
+
+            > .item {}
+
+            > .item.-icon {}
+
+            > .item:last-child {}
+
+            > .item > .link {}
+
+            > .item > .link.-active {}
+
+            > .item > .link:hover {}
+
+            @media (max-width: #{$screen-xs-max}) {
+                > .item:not(.-icon) {}
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+@use '../abstracts';
+
+.article-section {
+    padding: 2em 0;
+
+    @include abstracts.breakpoint(900px) {
+        padding-top: 0;
+    }
+}
+
+.pinned-post {
+    border-bottom: .5px solid grey;
+    padding-bottom: 2em;
+
+    > .title {
+        color: blue;
+    }
+}
+
+.posts {
+    padding-top: 2em;
+}
+
+.article-post {
+    & .image {
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    }
+
+    & .title {
+        color: blue;
+        margin: .9em 0;
+
+        @include abstracts.breakpoint(900px) {
+            margin-top: .3em;
+        }
+    }
+
+    @include abstracts.breakpoint(900px) {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2em;
+    }
+}
+
+.article-post + .article-post {
+    margin-top: 1.2em;
+}
+
+// sidebar section
+.sidebar {
+    margin-bottom: 2em;
+}

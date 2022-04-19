@@ -1,0 +1,24 @@
+@use '../abstracts';
+
+.banner {
+    padding: 2em 0;
+
+    > .title {
+        color: yellow;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include abstracts.set-breakpoint(600px) {
+            text-align: left;
+        }
+    }
+
+    > .description {
+        color: whitesmoke;
+        text-align: center;
+
+        @include abstracts.set-breakpoint(600px) {
+            text-align: left;
+        }
+    }
+}

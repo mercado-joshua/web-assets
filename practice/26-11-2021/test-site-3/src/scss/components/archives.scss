@@ -1,0 +1,21 @@
+.archives {
+    border: .5em solid lightgrey;
+    padding: 1em;
+}
+
+.archive-post {
+    border-bottom: .1em solid lightgrey;
+    > .title {
+        padding: 1em 0;
+    }
+
+    > .image {
+        height: 150px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.archive-post:last-child {
+    border: none;
+}

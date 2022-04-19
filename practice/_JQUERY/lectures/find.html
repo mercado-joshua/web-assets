@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul class="primary-menu">
+        <li class="item"><a class="link" href="#">link 1</a></li>
+        <li class="item"><a class="link" href="#">link 2</a></li>
+        <li class="item"><a class="link" href="#">link 3</a></li>
+        <li class="item"><a class="link" href="#">link 4</a></li>
+        <li class="item active"><a class="link disabled" href="#">link 5</a></li>
+        
+    </ul>
+
+    <ul class="primary-menu">
+        <li class="item"><a class="link item-1" href="#">link 1</a></li>
+        <li class="item"><a class="link" href="#">link 2</a></li>
+        <li class="item"><a class="link" href="#">link 3</a></li>
+        <li class="item"><a class="link" href="#">link 4</a></li>
+        <li class="item active"><a class="link disabled last" href="#">link 5</a></li>
+    </ul>
+
+    <select name="" id="" class="dropdown">
+        <option value="">Choose an option</option>
+        <option value="male" data-price="400">male</option>
+        <option value="female" data-price="500">female</option>
+    </select>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+            init();
+        });
+
+        function init() {
+            // parent           // children         // children (specified)
+            $('.primary-menu').find('.item').children('.item-1').css({
+                'background-color': 'blue',
+                'color': 'red'
+            });
+
+            $('.primary-menu').find('.item').children().last().css({
+                'background-color': 'yellow',
+                'color': 'red'
+            });
+
+            $('.primary-menu').find('.item').children().eq(6).css({
+                'background-color': 'green',
+                'color': 'red'
+            });
+
+            $('.primary-menu').find('.active').prev().css({
+                'background-color': 'pink',
+                'color': 'red'
+            });
+
+            $('.disabled').parent().css({
+                'outline': '3px dashed blue'
+            });
+
+            $('.last').closest('.primary-menu').css({
+                'outline': '3px dashed indigo'
+            });
+
+            // event delegation - the event will be forced to the specified children
+            $('.primary-menu').on('click', 'li', function() {
+
+                $(this).css({
+                    'background-color': 'black',
+                    'color': 'white'
+                });
+
+                // to turn it back to parent, use .parent()
+
+                // $(this).parent().css({
+                //     'background-color': 'black',
+                //     'color': 'white'
+                // });
+            });
+
+            // select
+            $('.dropdown').on('change', function() {
+                console.log($('.dropdown > option:selected').text());
+                console.log($('.dropdown > option:selected').val());
+                console.log($('.dropdown > option:selected').data('price'));
+            });
+
+            console.log($('.primary-menu').find('.item').children().eq(6));
+            console.log($('.primary-menu').find('.item').children());
+            console.log($('.primary-menu').find('.item').children().first());
+            console.log($('.primary-menu').find('.item').children().first().next());
+
+            /*
+            .children()
+            .eq()
+            .last()
+            .first()
+            .next()
+            .prev()
+
+            .parent()
+            .parents()
+
+            .data('name')
+            */
+
+        }
+    </script>
+</body>
+</html>

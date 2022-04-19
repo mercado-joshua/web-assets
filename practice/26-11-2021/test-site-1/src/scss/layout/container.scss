@@ -1,0 +1,14 @@
+@use '../abstracts';
+
+.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+
+    @include abstracts.breakpoint(768px) {
+        width: min(1200px, 80%);
+    }
+
+    @include abstracts.breakpoint(1000px) {
+        width: min(1200px, 70%);
+    }
+}

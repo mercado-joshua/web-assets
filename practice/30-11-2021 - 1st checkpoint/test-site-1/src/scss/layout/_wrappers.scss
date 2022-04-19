@@ -1,0 +1,226 @@
+@use '../abstracts';
+
+//## main wrapper
+.max-wrapper {
+    margin: 0 auto;
+    width: min(90%, 900px); // can be read as { max-width: 1200px; width: 80% }
+}
+
+//## banner section
+.primary-menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+
+    > .button-cta {
+        align-self: center;
+    }
+
+    // TIP: you must explicitly add the grid lines
+    @include abstracts.set-breakpoint(600px) {
+        display: grid;
+        grid-template-columns: 1fr 4em 1fr;
+        grid-template-rows: 6em minmax(10em, auto) auto;
+
+        > .title {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
+
+        > .image {
+            grid-column: 2 / 4;
+            grid-row: 1 / 4;
+        }
+
+        > .description {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        > .button-cta {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+
+            align-self: flex-start;
+            justify-self: flex-start;
+        }
+    }
+}
+
+//## events section
+.events-section {
+    @include abstracts.set-breakpoint(600px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(4em, auto) 2em auto;
+        gap: 1em;
+
+        > .title {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
+
+        > .date {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        > .description:first-of-type {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+
+        > .description:last-of-type {
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+        }
+    }
+}
+
+//## advertise section
+.advertise-section {
+    @include abstracts.set-breakpoint(600px) {
+        display: grid;
+        grid-template-columns: 1.2fr 3em 1fr;
+        grid-template-rows: 4em 3em auto 3em;
+
+        > .title {
+           grid-column: 1 / 4;
+           grid-row: 1 / 2; 
+        }
+
+        > .image {
+            grid-column: 1 / 3;
+            grid-row: 2 / 4;
+        }
+
+        > .description {
+            grid-column: 2 / 4;
+            grid-row: 3 / 5;
+        }
+    }
+}
+
+//## feature section
+.features-section {
+    @include abstracts.set-breakpoint(600px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 1em;
+        align-items: flex-start;
+
+        > .feature-card:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        > .feature-card:nth-child(2) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        > .feature-card:nth-child(3) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+        }
+    }
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & + .feature-card {
+        margin-top: 2em;
+    }
+
+    @include abstracts.set-breakpoint(600px) {
+       display: grid;
+       grid-template-columns: 5em 1fr;
+
+       & + .feature-card {
+            margin-top: 0;
+       }
+    }
+}
+
+//## gallery section
+.gallery {
+    @include abstracts.set-breakpoint(600px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12em, auto));
+        grid-auto-flow: dense;
+        gap: 1em;
+
+        > .title {
+            grid-column: 1 / -1;
+        }
+
+        > .image:nth-of-type(1) {
+            grid-row: span 2;
+        }
+
+        > .image:nth-of-type(2) {
+            grid-column: span 2;
+        }
+
+        > .image:nth-of-type(3) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+    }
+}
+
+//## article section
+.article-card {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+        margin-top: 1em;
+    }
+
+    > .button-cta {
+        align-self: center;
+    }
+
+    @include abstracts.set-breakpoint(600px) {
+        display: grid;
+        grid-template-columns: 1fr 5em 2fr;
+        grid-template-rows: repeat(2, 2em) auto;
+
+        > * {
+            margin-top: 0;
+        }
+
+        > .description {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        > .button-cta {
+            grid-column: 1 / 3;
+            grid-row: 3 / 4;
+
+            align-self: flex-start;
+            justify-self: flex-start;
+
+            margin-top: 1em;
+        }
+
+        > .image {
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+        }
+    }
+}

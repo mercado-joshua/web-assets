@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Object pattern</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+            /* outline: 1px dashed palevioletred; */
+        }
+
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        .media-object {
+            border: 3px solid #AEACAE;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .media-object > .footnote {
+            background-color: #EEEDEF;
+            padding: 5px;
+        }
+
+        .maincontent {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .content {
+            padding: 0 10px;
+        }
+
+        .content > .title {
+            margin: 0;
+        }
+
+        .maincontent + .footnote {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="media-object">
+        <div class="maincontent">
+            <img class="image" src="https://via.placeholder.com/150" alt="">
+
+            <div class="content">
+                <h2 class="title">This is my heading</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit eos voluptatum modi voluptatibus quae maiores dolorum architecto sint, blanditiis quia quas inventore qui dolores obcaecati velit quasi? Ab, laborum numquam!</p>
+            </div>
+        </div>
+
+        <div class="footnote">
+            <p class="copyright">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, modi.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: tomato;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition-property: transform;
+            transition-duration: 500ms;
+
+            text-shadow: 0px 3px 5px #050505;
+            box-shadow: 3px 5px 12px 0px blue;
+        }
+
+        /*
+         transform: translate(X, Y);
+         transform: rotate(X, Y); check
+         transform: scale(X, Y); check
+         transform: skew(X, Y);
+        */
+
+        
+
+        .box-1:hover {
+            transform: rotateX(45deg);
+
+            transform: translate(X, Y);
+        }
+
+        .box-2:hover {
+            transform: rotateY(45deg);
+        }
+
+        .box-3:hover {
+            transform: translateY(100px);
+        }
+
+        .box-4:hover {
+            transform: translateX(100px);
+        }
+
+        .box-5:hover {
+            transform: scaleX(2);
+        }
+
+        .box-6:hover {
+            transform: scaleY(3);
+        }
+
+        .box-7:hover {
+            transform: scaleZ(6);
+        }
+
+        .box-8:hover {
+            transform: translateZ(100px);
+        }
+
+        .box-9:hover {
+            transform: rotateZ(45deg); /* circling effect */
+        }
+
+        .box-10:hover {
+            transform: skewX(45deg); /* \     \ */
+        }
+
+        .box-11:hover {
+            transform: skewY(45deg); /* /     / */
+        }
+
+        .box-12,
+        .box-13 {
+            position: relative;
+        }
+
+        .box-13::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            background-color: turquoise;
+        }
+
+        .box-13::before {
+            content: 'Nike';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+        }
+
+        .box-12::before {
+            content: ':before';
+            position: absolute;
+            top: 0;
+            border-bottom: 2px solid blue;
+        }
+        
+
+        .content {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box-12">test</div>
+    <div class="box box-13">
+        <div class="content">
+            <h2>Lorem, ipsum.</h2>
+        </div>
+    </div>
+
+    <div class="box box-7">transform: scaleZ()</div>
+    <div class="box box-8">transform: translateZ()</div>
+    <div class="box box-9">transform: rotateZ()</div>
+
+    <div class="box box-1">transform: rotateX()</div>
+    <div class="box box-2">transform: rotateY()</div>
+
+    <div class="box box-3">transform: translateY()</div>
+    <div class="box box-4">transform: translateX()</div>
+
+    <div class="box box-5">transform: scaleY()</div>
+    <div class="box box-6">transform: scaleX()</div>
+
+    <div class="box box-10">transform: skewX()</div>
+    <div class="box box-11">transform: skewY()</div>
+</body>
+</html>

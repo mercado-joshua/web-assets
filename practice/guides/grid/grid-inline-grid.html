@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .grid,
+        .grid-inline {
+            background-color: khaki;
+            outline: 1px dashed red;
+            margin: 50px 0;
+        }
+
+        .grid > *,
+        .grid-inline > * {
+            background-color: indianred;
+            outline: 1px dashed red;
+        }
+
+        .grid {
+            display: grid;
+
+            /* how many columns you want, and what the size of each one */
+            /* grid-template-columns: 40px 80px; */
+            /* grid-template-columns: 40px 50%; */
+            /* grid-template-columns: 40px 60% auto; */
+
+            /* auto - takes the widths left in the grid container */
+
+            /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+            /* grid-template-columns: 2fr 1fr 1fr; */
+            /* grid-template-columns: 2fr repeat(3, 1fr); */
+            /* grid-template-columns: repeat(2, 100px 40%); */
+
+            /* grid-template-columns: repeat(2, 100px 40%);
+            grid-template-rows: 20px 40px; */
+
+            /* explicit */
+            /* grid-template: 20px 40px/repeat(1, 100px 40%); */
+
+            /* column-gap: 10px;
+            row-gap: 20px; */
+            /* gap: 20px 10px; */
+            /* implicit rows */
+            /* grid-auto-rows: 100px; */
+
+            /* grid-template-columns: repeat(4, minmax(80px, auto)); */
+            /* grid-template-columns: repeat(auto-fit, minmax(80px, auto)); */
+            gap: 20px 10px;
+
+            grid-auto-flow: column;
+        }
+
+        .grid-inline {
+            display: inline-grid;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="child">box 1</div>
+        <div class="child">box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.</div>
+        <div class="child">box 3</div>
+        <div class="child">box 4</div>
+
+        <div class="child">box 1</div>
+        <div class="child">box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.</div>
+        <div class="child">box 3</div>
+        <div class="child">box 4</div>
+
+        <div class="child">box 1</div>
+        <div class="child">box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.box Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptate numquam dignissimos quia fuga incidunt necessitatibus esse quaerat quidem.</div>
+        <div class="child">box 3</div>
+        <div class="child">box 4</div>
+    </div>
+
+    <div class="grid-inline">
+        <div class="child">box 1</div>
+        <div class="child">box 2</div>
+        <div class="child">box 3</div>
+        <div class="child">box 4</div>
+        <div class="child">box 5</div>
+    </div>
+</body>
+</html>

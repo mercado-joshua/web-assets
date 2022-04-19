@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+//  main.scss file structure (bootstrap version)
+//  -----------------------------
+//
+//  table of contents:
+//
+//   1. vendor
+//   2. layout
+//   3. sections
+//   4. components
+
+// 1. vendor - third-party's content delivery network (cdn)
+// ---------------------------------------------------------
+
+@forward 'vendor/font-awesome';
+@forward 'vendor/google-fonts';
+
+// 2. layout - contains styles for different aspects of the
+//             site's structural layout
+//           - contains element's flexbox, grid, and
+//             max-width
+// ---------------------------------------------------------
+
+@forward 'layout/layouts';
+
+// 3. sections - contains styles for every block/sections
+//               in the layout
+//             - contains element's position, floats,
+//               margins and dimensions **(height, width)
+//
+//             **except for avatars and logos
+// ---------------------------------------------------------
+
+// @forward 'sections/banner-section';
+
+// 4. components - "mini" layouts. Styles for small,
+//                  reusable pieces of the site
+// ---------------------------------------------------------
+
+// @forward 'components/buttons';
+

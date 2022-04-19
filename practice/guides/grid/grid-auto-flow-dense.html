@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            background-color: #91A0EB;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(80px, auto));
+            grid-auto-rows: 100px;
+            gap: 5px;
+
+            grid-auto-flow: column dense;
+        }
+
+        .grid > .item {
+            background-color: #EFBD14;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item:nth-child(2),
+        .item:nth-child(4),
+        .item:nth-child(7),
+        .item:nth-child(8) {
+            background-color: #BD4EFF;
+            grid-column: 3/span 1;
+            /* grid-row: 2/span 3; */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+    </div>
+</body>
+</html>

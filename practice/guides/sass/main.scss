@@ -1,0 +1,38 @@
+@import 'variables';
+@import 'inheritance';
+@import 'mixins';
+@import 'lists';
+@import 'maps';
+@import 'maths';
+@import 'ifDirective';
+@import 'loops';
+@import 'functionDirectives';
+
+$blue: blue;
+
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background: url(#{$image-url}cats.png) $blue $no-repeat;
+    background-position: center;
+}
+
+p {
+    line-height: $float;
+}
+
+.btn .#{$btn-text} {
+    color: $blue;
+}
+
+.btn {
+    box-shadow: $list;
+}
+
+@import 'grid';
+@import 'buttons';

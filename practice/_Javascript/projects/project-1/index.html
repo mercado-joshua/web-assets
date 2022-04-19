@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" action="hahaha.php" method="post">
+        <input id="js-text" class="js-text" type="text" name="text" id="" value="hahahaha">
+        <input id="js-btn" class="js-btn" type="button" value="get birth year">
+    </form>
+    <p class="js-output"></p>
+
+    <script>
+        // const text = document.querySelector('.js-text').value;
+        // const btn = document.querySelector('.js-btn');
+
+        function calculate() {
+            if(text == '' || text == '0') {
+                window.alert('Value cannot be empty or 0');
+                return;
+            }
+            else {
+                window.alert('success');
+            }
+        }
+
+        // const text = document.getElementById('js-text').value;
+
+        const text = document.forms['myForm']['text'].value;
+        console.log(text);
+        const btn = document.getElementById('js-btn');
+        const output = document.querySelector('.js-output');
+
+        btn.onclick = function() {
+            calculate();
+        };
+
+    </script>
+</body>
+</html>

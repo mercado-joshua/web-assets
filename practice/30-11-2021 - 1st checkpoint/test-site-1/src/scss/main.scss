@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+//  main.scss file structure
+//  -----------------------------
+//
+//  table of contents:
+//
+//   1. abstracts 
+//      - not included in the main.scss 
+//      - contains no actual styles, just Sass mechanisms
+//        that help define styles in other directories
+//   2. vendor
+//   3. base
+//   4. objects
+//   5. layout
+//   6. sections
+//   7. components
+
+// 1. vendor - third-party content delivery network (cdn)
+// ---------------------------------------------------------
+
+@forward 'vendor/font-awesome';
+@forward 'vendor/google-fonts';
+
+// // 2. base - contains boilerplate used throughout the site
+// // ---------------------------------------------------------
+@forward 'base/reset';
+
+// // 3. objects - contains styles for elements that shares
+// //              same properties across the website
+// // ---------------------------------------------------------
+@forward 'objects/objects';
+
+// // 4. layout - contains styles for different aspects of the
+// //             site's structural layout
+// // ---------------------------------------------------------
+@forward 'layout/wrappers';
+
+@forward 'sections/banner-section';
+@forward 'sections/events-section';
+@forward 'sections/advertise-section';
+@forward 'sections/features-section';
+@forward 'sections/gallery-section';
+@forward 'sections/article-section';
+
+// // 5. components - "mini" layouts. Styles for small,
+// //                  reusable pieces of the site
+// // ---------------------------------------------------------
+@forward 'components/buttons';
+@forward 'components/primary-menu';
+@forward 'components/banner';
+@forward 'components/feature-card';
+@forward 'components/gallery';
+@forward 'components/article-card';

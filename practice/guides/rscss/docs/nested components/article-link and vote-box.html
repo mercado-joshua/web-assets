@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ✓ Better: 2 levels */
+        .image-frame {
+            > .description {}
+            > .description > .icon {}
+        }
+        
+        .article-link {
+            > .vote-box > .up {} // wrong!
+        }
+
+        .vote-box { // right!
+            &.-highlight > .up {}
+        }
+    </style>
+</head>
+<body>
+    <div class="article-link">
+        <div class="vote-box -hightlight">
+            <div class="up"></div>
+            <div class="number">24</div>
+            <div class="down"></div>
+        </div>
+
+        <h3 class="title">Vehicles migrate north as insects continue to dawn</h3>
+        <p class="meta">24 points - Submitted 2hr ago</p>
+    </div>
+</body>
+</html>

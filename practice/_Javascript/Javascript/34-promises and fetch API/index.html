@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// https://randomuser.me/
+
+const getRandomUsers = numOfUsers => {
+    const fetchRandomUsers = fetch(`https://randomuser.me/api/?results=${numOfUsers}`);
+
+    // check if the promise is fulfilled
+    console.log(fetchRandomUsers);
+
+    fetchRandomUsers.then(data => {
+        // check if thedata has response
+        console.log(data);
+
+        // .json is a promise
+        // console.log(data.json());
+
+        // access the users
+        data.json().then(randomUsers => {
+            console.log(randomUsers.results.length);
+
+            console.log(JSON.stringify(randomUsers, null, 2));
+
+            // loop the users and get their data
+            randomUsers.results.forEach(user => {
+                const {gender,email} = user;
+
+                console.log(`${gender} - ${email}`);
+            });
+        })
+    })
+};
+
+getRandomUsers(10);
+</script>
+</body>
+</html>

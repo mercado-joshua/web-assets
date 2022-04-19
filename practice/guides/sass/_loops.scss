@@ -1,0 +1,62 @@
+$headers: h1, h2, h3, h4, h5, h6;
+$fontSize: 55px, 50px, 45px, 40px, 35px, 30px;
+$index: 1;
+
+$len: length($headers); 
+
+// accepts whole number only
+// from 6 through 1 = de increment
+@for $i from 1 through 6 {
+    // h#{$i} { font-size: 55px; }
+
+    #{nth($headers, $i)} {
+        font-size: #{nth($fontSize, $i)};
+        line-height: #{nth($fontSize, $i) + 10};
+    }
+}
+
+@for $i from $len through 1 {
+    // h#{$i} { font-size: 55px; }
+
+    #{nth($headers, $i)} {
+        font-size: #{nth($fontSize, $i)};
+        line-height: #{nth($fontSize, $i) - 5};
+    }
+}
+
+// targets each item in the list
+@each $head in cont-1, cont-2, cont-3, cont-4, cont-5 {
+    .#{$head} {
+        font-size: 1px;
+    }
+}
+
+// good for using map
+@each $head, $font in (content-1, 10px), (content-1, 10px), (content-2, 20px), (content-3, 30px), (content-4, 40px) {
+    .#{$head} {
+        font-size: $font;
+    }
+}
+
+$myMap: (
+    f-1: 10px,
+    f-2: 20px,
+    f-3: 30px,
+    f-4: 40px,
+    f-5: 50px
+);
+
+@each $head, $font in $myMap {
+    .#{$head} {
+        font-size: $font;
+    }
+}
+
+$index: 1;
+// this will continually loop until the condition is false
+@while $index <= 6 {
+    #{nth($headers, $index)} {
+        font-size: #{nth($fontSize, $index)};
+    }
+    $index: $index + 1; // incremnents the value
+}

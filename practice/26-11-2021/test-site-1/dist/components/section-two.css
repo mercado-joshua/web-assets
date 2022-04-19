@@ -1,0 +1,7 @@
+.section-two {
+  background-color: darkblue;
+  padding: 2em 0;
+}
+.section-two .container > .description {
+  color: #fff;
+}

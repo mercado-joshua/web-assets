@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test-form > .item > .firstname:invalid {
+            outline: 2px dashed red;
+        }
+
+        .test-form > .item > .firstname:invalid:required {
+            background-color: pink;
+        }
+
+        .test-form > .item > .firstname:valid {
+            outline: 2px dashed green;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">html "required" attribute</h2>
+    <form action="" class="test-form">
+        <div class="item">
+            <label for="firstname">Firstname (required)</label>
+
+            <input type="text" id="firstname" class="firstname" required>
+        </div>
+        <br/><br/>
+        <div class="item">
+            <label for="email">Email (required)</label>
+
+            <input type="email" id="email" class="email" required>
+        </div>
+
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

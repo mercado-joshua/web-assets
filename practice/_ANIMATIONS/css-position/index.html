@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::after,
+        *::before,
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 1rem;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        .sticky {
+            box-shadow: -1px -1px 6px 0px grey;
+            background-color: whitesmoke;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .sticky-two {
+            background-color: thistle;
+            padding: .5em;
+
+            position: sticky;
+            top:50px;
+        }
+
+        .main {
+            min-height: 100%;
+        }
+
+        .relative {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            /* right: 10px; */
+            /* bottom: 100px; */
+
+
+            background-color: tomato;
+            color: #fff;
+            padding: 1em;
+        }
+
+        .absolute {
+            position: relative;
+        }
+
+        .image {
+            height: 150px;
+
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 0;
+            background-color: yellowgreen;
+            margin: 0;
+            padding: .5em 1em;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky">
+        <h2 class="title">Lorem, ipsum.</h2>
+    </header>
+
+    <div class="main">
+        <p class="relative">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p class="absolute">
+            <img class="image" src="/css-position/Profile_Picture_22.jpg" alt="">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p class="sticky-two"><b>Sticky two</b> adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci recusandae hic dicta voluptatem quaerat distinctio repellendus dolor iusto eius alias magni animi accusantium eos explicabo nulla, consequatur ratione aut molestias iure ab sit saepe itaque incidunt veniam? Ab explicabo optio sit, voluptate rem beatae provident laudantium consequatur. Vel saepe earum molestias repellat consequatur veniam deserunt. Maiores obcaecati perferendis fugit impedit quaerat alias possimus provident perspiciatis, libero excepturi blanditiis autem sit velit culpa ex soluta consequatur voluptatibus voluptatem laborum? Adipisci velit voluptate maxime reiciendis dolor ipsam ullam, repudiandae tenetur, eveniet exercitationem nemo itaque enim porro aspernatur eligendi esse, fuga amet tempora!</p>
+        <h1 class="fixed">HAHAHA</h1>
+    </div>
+</body>
+</html>

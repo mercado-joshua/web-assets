@@ -1,0 +1,102 @@
+.header {
+  padding: 1.5em 0;
+  background-color: lightgrey;
+}
+.header > .container .rowbox > .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (min-width: 500px) {
+  .header > .container .rowbox > .row {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.header .icon {
+  font-size: 2rem;
+}
+@media screen and (min-width: 500px) {
+  .header .icon {
+    display: none;
+  }
+}
+
+.headings > .title,
+.headings > .subtitle {
+  color: blue;
+}
+@media screen and (min-width: 500px) {
+  .headings > .title,
+.headings > .subtitle {
+    text-align: center;
+  }
+}
+
+.headings > .title {
+  font-size: 1.7rem;
+}
+
+@media screen and (min-width: 500px) {
+  .header .headings > .subtitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.primary-menu {
+  display: none;
+}
+.primary-menu > .item > .link {
+  text-align: center;
+  padding: 0.2em 0;
+}
+@media screen and (min-width: 900px) {
+  .primary-menu > .item {
+    margin-left: 1em;
+  }
+}
+@media screen and (min-width: 500px) {
+  .primary-menu {
+    display: block;
+    padding-top: 1em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .primary-menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .rowbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}

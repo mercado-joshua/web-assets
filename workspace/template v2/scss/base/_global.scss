@@ -1,0 +1,119 @@
+@use "../utils/keyframes";
+@use "../utils/breakpoints";
+
+*:where(::before, ::after) {
+    box-sizing: border-box;
+}
+
+ul, ol, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+:where(ul, ol) > li {
+    list-style: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+[class*="-btn"] {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    appearance: none;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    border-style: none;
+    height: auto;
+}
+
+.max-wrapper {
+    max-width: 992px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.test {
+    @include keyframes.animation-keyframes("test1") {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+.test2 {
+    @include keyframes.animation-keyframes("test2") {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+.test3 {
+    @include keyframes.animation-keyframes("test3") {
+        0% {
+            opacity: 0;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(100%);
+        }
+    }
+}
+
+.test4 {
+    color: red;
+
+    > .title {
+        line-height: 1;
+
+        @include breakpoints.media-breakpoint-up(600px) {
+            line-height: 2;
+        }
+
+        @include breakpoints.media-breakpoint-up(768px) {
+            line-height: 3;
+        }
+
+        @include breakpoints.media-breakpoint-up(992px) {
+            line-height: 4;
+        }
+    }
+
+    @include breakpoints.media-breakpoint-up(600px) {
+        color: blue;
+    }
+
+    @include breakpoints.media-breakpoint-up(768px) {
+        color: green;
+    }
+
+    @include breakpoints.media-breakpoint-up(992px) {
+        color: yellow;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+const calculator = name => {
+    return {
+        name: name,
+        add: function (n1, n2) {
+            return n1 + n2;
+        }
+    };
+};
+
+const calc = calculator ('casio');
+
+console.log (calc.name);
+console.log (calc.add(2, 4));
+
+// PREFERRED
+// if the parameter name shares the same name with a property name
+
+const pricePropertyName = "PRICE";
+const calculator2 = (name, price) => {
+    return {
+        name,
+        add2(n1, n2) {
+            return n1 + n2;
+        },
+        [pricePropertyName.toLowerCase()]: price
+    };
+};
+
+const calc2 = calculator2 ('casio', 20.00);
+console.log (calc2.name);
+console.log (calc2.add2(2, 4));
+console.log (calc2.price);
+</script>
+</body>
+</html>

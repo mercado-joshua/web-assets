@@ -1,0 +1,7 @@
+@use '../abstracts';
+
+.primary-menu {
+   > .item > .link {
+       color: #fff;
+   }
+}

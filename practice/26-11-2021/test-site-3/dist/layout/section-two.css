@@ -1,0 +1,36 @@
+.section-two .container {
+  padding-bottom: 1.5em;
+}
+@media screen and (min-width: 920px) {
+  .section-two .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+.section-two .container > .sidebar {
+  background-color: #102b10;
+  color: #fff;
+  padding: 0.5em 1em;
+}
+@media screen and (min-width: 920px) {
+  .section-two .container > .sidebar {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+@media screen and (min-width: 920px) {
+  .section-two .container > .article-one {
+    -webkit-box-flex: 3;
+    -webkit-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+  }
+}

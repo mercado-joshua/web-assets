@@ -1,0 +1,21 @@
+@use '../abstracts';
+
+.feature-card {
+    > .icon {
+        font-size: 3rem;
+        color: #CB5F49;
+    }
+
+    > .description {
+        color: #10486C;
+        text-align: center;
+    }
+
+    @include abstracts.set-breakpoint(600px) {
+        > .description {
+            color: #10486C;
+            text-align: left;
+            margin: 0;
+        }
+    }
+}

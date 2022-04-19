@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // second parameter of fetch, an object for the settings of api
+
+        // when searching/using api to use,alwys check their documentation
+        // to see what they accept, how data they want to be formated, headers they accept
+
+        const requestJoke = async (firstName, lastName) => {
+            // & - chain one or more parameters
+            const response = await fetch(`http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}&limitTo=[nerdy]`);
+
+            const jsonResponse = await response.json();
+            console.log(jsonResponse.value.joke);
+            
+        };
+
+        requestJoke('clint', 'eastwood');
+
+    </script>
+</body>
+</html>

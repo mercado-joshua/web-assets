@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .ball {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border: 1px dashed red;
+            background-color: pink;
+            border-radius: 5em;
+        }
+
+        .ball-1 {
+            position: absolute;
+            top: 5em;
+            left: 5em;
+            transition-property: width, background-color;
+            transition-duration: 500ms, 3000ms;
+            transition-timing-function: cubic-bezier(1, 0.04, 0.48, 1.03);
+        }
+
+        .ball-1:hover {
+            width: 200px;
+            background-color: blue;
+        }
+
+        .ball-2 {
+            position: absolute;
+            top: 5em;
+            left: 15em;
+            transition-property: height, background-color;
+            transition-duration: 5000ms, 3000ms;
+            transition-timing-function: steps(10, end);
+        }
+
+        .ball-2:hover {
+            height: 300px;
+            background-color: blue;
+        }
+
+        .ball-3 {
+            position: absolute;
+            top: 5em;
+            left: 25em;
+        }
+
+        .ball-3::before,
+        .ball-3::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 1000ms ease-out; 
+        }
+
+        .ball-3::before {
+            background-color: yellow;
+        }
+
+        .ball-3::after {
+            background-color:green;
+        }
+
+        .ball-3:hover::after {
+            transform: translateX(-5em) scale(3);
+            opacity: 1;
+        }
+
+        .ball-3:hover::before {
+            transform: translateX(5em) scale(3);
+            opacity: 1;
+        }
+
+        .sun {
+            position: absolute;
+            top: 10em;
+            left: 15em;
+            height: 150px;
+            width: 150px;
+            background-color: goldenrod;
+            border: 1px solid yellow;
+            border-radius: 50%;
+            transition: all 3000ms ease-in-out;
+        }
+
+        .ray {
+            position: absolute;
+            height: 80px;
+            width: 80px;
+            background-color: yellow;
+        }
+
+        .ray:nth-child(1) {
+            top: -5em;
+            transform: skewX(20deg) rotateZ(50deg)
+        }
+
+        .ray:nth-child(2) {
+            top: -3em;
+            left: 6em;
+            transform: skewX(20deg) rotateZ(80deg)
+        }
+
+        .ray:nth-child(3) {
+            top: 3em;
+            left: 7em;
+            transform: skewX(20deg) rotateZ(100deg)
+        }
+
+        .ray:nth-child(4) {
+            top: 8em;
+            left: 5em;
+            transform: skewX(20deg) rotateZ(130deg)
+        }
+
+        .ray:nth-child(5) {
+            top: 8em;
+            left: -1em;
+            transform: skewX(20deg) rotateZ(190deg)
+        }
+
+        .sun:hover {
+            transform: scale(1.5) rotateZ(180deg);
+        }
+
+        .ball-4 {
+            position: absolute;
+            transition: transform 500ms ease-out;
+        }
+
+        .ball-4:hover {
+            transform: translate(30px, 30px) scale(.5) translateY(100px) scale(.5) scale(5);
+        }
+
+        /*
+        
+        1. in order dapat nakalagay ang mga trnsform function
+        2. di dapat magkasama ang mga magkakamukha na functions or else ma ooverwrite ung isa
+        3. ang translate() ay sabay sabay ite-take effect ang mga values
+        4. dapat ang mga values sa translate() ay magka-compatible
+        */
+    </style>
+</head>
+<body>
+    <div class="ball ball-1">1</div>
+    <div class="ball ball-2">2</div>
+
+    <div class="ball ball-3">3</div>
+
+    <div class="sun">
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+    </div>
+
+    <div class="ball ball-4">4</div>
+</body>
+</html>

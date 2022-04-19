@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// collection of grouped variables
+// we define property : value
+var person =  {
+    name: "Joshua Mercado",
+    age: 23,
+    single: true,
+    money: undefined,
+    skills: {
+        photoshop: true,
+        salesforce: true
+    }
+};
+
+// [object object]
+console.log(person + " type of: " + typeof person);
+
+// to print the object
+console.log(JSON.stringify(person));
+
+// grab property
+console.log(person.name + " type of: " + typeof person.name);
+
+// grab all values
+console.log(Object.values(person));
+
+console.log(person.skills.salesforce);
+console.log(person.skills + " type of: " + typeof person.skills)
+
+</script>
+</body>
+</html>

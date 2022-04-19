@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .custom-form > .item > .error {
+            display: none;
+            padding: 1em;
+            background-color: pink;
+            color: red;
+            border: 1px solid red;
+        }
+
+        .custom-form > .item > .error.-active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">"invalid" event handler</h2>
+    <p class="description">check first the validity of element before submitting</p>
+    <form action="" class="test-form">
+        <div class="item">
+            <label for="number">Enter 0 to 10 only (required)</label>
+            <input id="number" type="number" class="number" min="0" max="10" required data-js-number/>
+        </div>
+        <button type="submit">submit</button>
+    </form>
+    <p class="error" aria-live="polite" data-js-error></p>
+
+    <hr>
+    <h2 class="title">Constraint validation API</h2>
+    <form action="" class="constraint-form">
+        <div class="item">
+            <label for="email">email</label>
+            <input class="email" type="email" name="" id="email" data-js-email>
+        </div>
+
+        <button class="submit-btn">submit</button>
+    </form>
+
+    <hr>
+    <form action="" class="custom-form" novalidate data-js-custom-form>
+        <div class="item">
+            <label for="email">please enter an email address</label>
+            <input type="email" id="email" minlength="8" required data-js-custom-email>
+            <span class="error" aria-live="polite"></span>
+        </div>
+
+        <button class="submit">submit</button>
+    </form>
+
+    <hr>
+    <form action="" class="username-form">
+        <div class="item">
+            <input 
+                type="text" 
+                class="username" 
+                data-js-username 
+                required 
+                pattern="[A-Za-z]+" 
+                placeholder="username"
+            />
+        </div>
+
+        <button class="submit">click me!</button>
+    </form>
+    <script>
+        // 1
+
+        /** "invalid" event
+         * - the form will not submit if there's "invalid" event fired
+          */
+
+        /** "input" event
+         * - fired if an input/textarea value is changed
+          */
+        const number = document.querySelector("[data-js-number]");
+        const message = document.querySelector("[data-js-error]");
+
+        number.addEventListener("invalid", function(event) {
+            const value = event.target.value.trim();
+            message.textContent += value;
+        });
+
+        // 2
+
+        /** constraint validation api */
+        const email = document.querySelector("[data-js-email]");
+
+        email.addEventListener("input", function() {
+            if(email.validity.typeMismatch) { // returns true if there's an error
+                email.setCustomValidity("I'm expecting an email"); // add custom error message as tooltip and renders input as "invalid"
+            }
+            else {
+                email.setCustomValidity("");
+            }
+        });
+
+        // 3 - custom error style
+        const form = document.querySelector("[data-js-custom-form]");
+        const customEmail = document.querySelector("[data-js-custom-email]");
+        const customError = document.querySelector("#email + .error");
+
+        customEmail.addEventListener("input", function() {
+            if(customEmail.validity.valid) {
+                customError.textContent = ""; // reset the error content
+                customError.classList.remove("-active");
+            }
+            else {
+                showError();
+            }
+        });
+
+        // let the form submit, if there's no error
+        form.addEventListener("submit", function(event) {
+            if(!customEmail.validity.valid) {
+                showError();
+                event.preventDefault();
+            }
+        });
+
+        // error validation
+        function showError() {
+            // if the field is empty
+            if(customEmail.validity.valueMissing) {
+                customError.textContent = "You need to enter an email address";
+            }
+            else if(customEmail.validity.typeMismatch) {
+                customError.textContent = "Entered value needs to be an email address";
+            }
+            else if(customEmail.validity.tooShort) {
+                customError.textContent = `Email should be at least ${ customEmail.minLength } characters; you entered ${ customEmail.value.length }.`;
+            }
+
+            customError.classList.add("-active");
+        }
+
+        // 4
+        const username = document.querySelector("[data-js-username]");
+
+        username.addEventListener("input", function() {
+            username.setCustomValidity("");
+            username.checkValidity(); // when the value is invalid, it will raise the "invalid" event
+        });
+
+        username.addEventListener("invalid", function() {
+            if(username.value.trim() === "") {
+                username.setCustomValidity("Enter your username");
+            }
+            else {
+                username.setCustomValidity("Usernames can only contain upper and lowercase letters. Try again!");
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+getJSON(); - get json info
+$.ajax({}); - get data
+
+
+// protocol & http
+
+protocol - set of rules to follow
+
+http - 
+
+wifi protocol - phone to router
+ftp protocol - send and receive files from server
+email protocol
+
+http (hypertext transfer protocol) - communicate to in web by machines
+
+request (ask) requester
+response (given) provider
+
+client (browser) -> GET url -> Server
+client (browser) <- http: 200 ok <- Server
+
+
+content-type - tells what type of data to  be send over
+accept - what type of data the client (browser) want/permits to accept
+
+GET - get a web resource from the server
+POST - post data to the web Server
+PUT - ask the server to store the data
+Delete - ask the server to delete the data
+
+response status code - how the server process the request, and what happen to the server
+    could be crashed
+    dont know what to do
+
+    1xx - (informational) the request is receive,and the server continuing the process
+    2xx - (success) the request is successfully received, understood, accepted,and received
+    3xx - (redirection) further action must be taken in order to complete the request
+    4xx - (client error) the request contains bad syntax or cannot be understood
+    5xx - (server error) the server failed to fullfil an apparently valid request
+        cannot provide because the server has internal issue
+
+port
+
+server <- 80 - http <- client
+server <- 443 - https <- client
+
+http://<hostname>:<port>
+
+#### JSON
+json and javascript are not the same thing
+
+#### REST API
+service - a function/method that can be reused
+
+e.g
+addService, weatherService, validateXMLService
+
+web service - service that is accessed over the web, has request and response
+
+api - the way you do the interfacing
+application programming interface
+
+-expose an interface
+
+REST - REpresentational State Transfer
+a design pattern
+
+token based rest API
+-authentication
+--to access the rest api, you need to have proper userid and password
+-- userid and password are the authentication to connect
+
+-authorization
+--the kind of operation that is allowed to perform on the resource
+--token is nothing but a key issued by the server to client with some permission
+--client cab use this value and pass it to a server everytime it connects and prove it has authorization to access the resource
+
+token based rest api means having the authorization to access the resource using the token key

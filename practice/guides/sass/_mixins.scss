@@ -1,0 +1,71 @@
+@mixin myFirstMixin {
+    border: 1px solid black;
+    background-color: yellow;
+    color: yellowgreen;
+}
+
+@mixin mixinWithSelector {
+    #mixinWithSelector {
+        border: 1px solid black;
+        background-color: yellow;
+        color: yellowgreen;  
+    }
+}
+
+@mixin mixinWithArgument($argOne, $argTwo, $argThree) {
+    border: 1px solid $argOne;
+    background-color: $argTwo;
+    color: $argThree; 
+}
+
+@mixin mixinWithPrefix($argOne) {
+    -webkit-box-sizing: $argOne;
+    box-sizing: $argOne;
+}
+
+@mixin mixinWithMultipleValues($argOne...) {
+    box-shadow: $argOne;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-o-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+.mixin {
+    @include myFirstMixin();
+}
+
+.mixin-one {
+    @include mixinWithSelector();
+
+    color: blue;
+    background-color: brown;
+}
+
+.mixin-two {
+    @include mixinWithArgument(red, blue, green);
+}
+
+.mixin-three {
+    @include mixinWithPrefix(border-box);
+}
+
+.mixin-four {
+    @include mixinWithMultipleValues(1px 2px 3px black, 4px 3px 2px red);
+}
+
+@include keyframes(myAnim) {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+

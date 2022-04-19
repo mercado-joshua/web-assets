@@ -1,0 +1,23 @@
+// change/remove/create element
+// add css
+// read/change atrributes
+// attach event listener
+
+
+window.document
+
+console.dir(document)
+
+document.domain
+document.URL
+document.title
+document.all
+
+document.all[0]
+
+document.forms
+
+
+console.log(form.childNodes); // returns array of its children
+
+firstChild.data

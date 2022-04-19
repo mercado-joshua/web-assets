@@ -1,0 +1,46 @@
+@use '../abstracts'; // use all the available stylesheet in the "abstract/" folder
+
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+html {
+    @include abstracts.set-breakpoint(600px) {
+        font-size: 1.125rem;
+    }
+
+    // @include abstracts.set-breakpoint(900px) {
+    //     font-size: 1.25rem;
+    // }
+}
+
+body {
+    font-family: abstracts.$font-poppins;
+    margin: 0;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}

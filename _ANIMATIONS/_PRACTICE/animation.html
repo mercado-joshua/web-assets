@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *::after,
+       *::before,
+       * {
+           box-sizing: border-box;
+       }
+
+       body {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+       }
+
+       .box {
+           position: relative;
+           height: 200px;
+           width: 400px;
+           border: 1px dashed grey;
+           background-color: lightgrey;
+       }
+
+       .box-1::before,
+       .box-2::before,
+       .box-3::before,
+       .box-4::before,
+       .box-5::before,
+       .box-6::before {
+           content: "";
+           position: absolute;
+           top: 0;
+           left: 0;
+           height: 100%;
+           width: 100%;
+           background-color: pink;
+           transform-origin: top left;
+       }
+
+       .box-1::before {
+           transform: translateX(-100%);
+           animation: slide-in 3000ms 5000ms;
+       }
+
+       @keyframes slide-in {
+           0% {
+               transform: translateX(-100%);
+           }
+
+           100% {
+               transform: translateX(0);
+           }
+       }
+
+       .box-2::before {
+           opacity: 0;
+           transform: rotate(-30deg) translateY(-100%);
+           animation: drop-in 250ms cubic-bezier(0.7,-0.47, 0, 1.22) 2000ms;
+           animation-iteration-count: infinite;
+       }
+
+       @keyframes drop-in {
+           0% {
+                opacity: 0;
+               transform: rotate(-30deg) translateY(-100%);
+           }
+
+           100% {
+                opacity: 1;
+               transform: rotate(0deg) translateY(0);
+           }
+       }
+
+       .box-3 {
+        overflow: hidden;
+       }
+
+       .box-3::before {
+           background: url("./images.jpeg");
+           background-repeat: repeat;
+           background-size: contain;
+           transform: translateX(-200%) scaleX(3);
+           animation: slide 250ms infinite 5000ms linear;
+       }
+
+       @keyframes slide {
+           0% {
+            transform: translateX(-200%) scaleX(3);
+           }
+
+           50% {
+            transform: translateX(-100%) scaleX(3); 
+           }
+
+           75% {
+            transform: translateX(0) scaleX(3); 
+           }
+
+           100% {
+            transform: translateX(-200%) scaleX(3);
+           }
+       }
+
+       .box-4 {
+           overflow: hidden;
+       }
+
+       .box-4::before {
+           background: url("./images.jpeg");
+           background-repeat: repeat-x;
+           background-size: contain;
+           transform: translateX(0) scaleX(3);
+           animation: slide-2 10000ms infinite 3000ms linear;
+           animation-fill-mode: forwards;
+       }
+
+       @keyframes slide-2 {
+           0% {
+            transform: translateX(0) scaleX(3);
+           }
+
+           100% {
+            transform: translateX(-200%) scaleX(3);
+           }
+       }
+
+       .box-5::before {
+           transform-origin: center;
+           margin: 0 auto;
+           height: 100px;
+           width: 100px;
+           background: url("./fan-icon-24.jpg");
+           background-size: contain;
+           animation: spin 1000ms linear 5000ms infinite;
+       }
+
+       @keyframes spin {
+           0% {
+            transform: rotate(0);
+           }
+
+           100% {
+            transform: rotate(1turn);
+           }
+       }
+
+       .box-6::before {
+           transform-origin: center;
+           height: 100px;
+           width: 100px;
+           background: url("./heart-png-38796.png");
+           background-size: contain;
+           animation: heartbeat 1000ms linear 5000ms infinite;
+           animation-direction: alternate;
+       }
+
+       @keyframes heartbeat {
+           0% {
+               transform: scale(1);
+           }
+
+           100% {
+               transform: scale(1.5);
+           }
+       }
+
+       .box-7::before,
+       .box-7::after {
+           content: "";
+           position: absolute;
+           height: 100px;
+           width: 100px;
+           background-color: pink;
+           transform-origin: center;
+           border-radius: 50%;
+           box-shadow: 1px 1px 1px black;
+           animation: bounce ease-out infinite;
+           animation-delay: 3000ms;
+       }
+
+       .box-7::before {
+           --bounce: 30px;
+           left: 10px;
+           bottom: 10px;
+           animation-duration: 300ms;
+       }
+
+       .box-7::after {
+            --bounce: 70px;
+           right: 10px;
+           bottom: 10px;
+           animation-duration: 500ms;
+       }
+
+       @keyframes bounce {
+           0% {
+                transform: translateY(0);
+           }
+
+           100% {
+                transform: translateY(calc(var(--bounce) * -1));
+           }
+       }
+
+   </style>
+</head>
+<body>
+    <div class="box box-1"></div>
+    <br><br><br>
+    <h2>looped animation</h2>
+    <div class="box box-2"></div>
+    <br><br><br>
+    <h2>looped animation</h2>
+    <div class="box box-3"></div>
+    <br><br><br>
+    <h2>looped animation</h2>
+    <div class="box box-4"></div>
+    <br><br><br>
+    <h2>looped animation</h2>
+    <div class="box box-5"></div>
+    <br><br><br>
+    <h2>alternate animation</h2>
+    <div class="box box-6"></div>
+
+    <br><br><br>
+    <h2>dynamic animations with CSS variables</h2>
+    <div class="box box-7"></div>
+</body>
+</html>

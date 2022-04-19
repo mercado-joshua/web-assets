@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        .max-container {
+            width: min(80%, 1200px);
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        .header-section {
+            background-color: antiquewhite;
+            padding: 5px 10px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .primary-menu {
+            display: flex;
+        }
+
+        .primary-menu > .list {
+            list-style: none;
+        }
+
+        .primary-menu > .list + .list {
+            margin-left: 1em;
+        }
+
+        .btn {
+            border: none;
+            padding: 5px 10px;
+            font-size: 1.2rem;
+            background-color: lightgray;
+        }
+
+        .btn.-link {
+            border: none;
+            padding: 5px 10px;
+            font-size: 1.2rem;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-section">
+        <h1 class="logo">Home Page</h1>
+        <ul class="primary-menu">
+            <li class="list">Home</li>
+            <li class="list">About</li>
+            <li class="list">Contact</li>
+        </ul>
+    </header>
+    <div class="max-container">
+        <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, autem! <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia velit quidem minus aliquid? Iure, omnis praesentium dolorum sit eligendi in quae labore eius odio exercitationem ipsa consectetur, illum cum!</p>
+
+        <h2 class="title">There is no title yet</h2>
+        <button class="btn -link">button</button>
+        <div class="actions">
+            <button class="btn">Button A</button>
+            <button class="btn">Button B</button>
+            <button class="btn">Button C</button>
+        </div>
+
+        <h3 class=".subtitle">List</h3>
+        <ul class="secondary-menu">
+            <li class="list">List A</li>
+            <li class="list">List B</li>
+            <li class="list">List C</li>
+            <li class="list">List D</li>
+            <li class="list">List E</li>
+        </ul>
+
+        <form class="signup-form" action="">
+            <label for="" data="hahaha">Name</label>
+            <input class="text" type="text">
+
+            <label for="">Email</label>
+            <input class="email" type="text">
+
+            <div class="actions">
+            <input class="submit" type="submit" value="click me!">
+            </div>
+        </form>
+
+        <a class="link" href="#">Images link</a>
+        <a class="link" href="#">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, reiciendis.</a>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, tempora suscipit velit placeat debitis ea incidunt impedit magni modi maiores!</p>
+        <img src="https://picsum.photos/200/300" alt="">
+        <footer class="footer-section">
+            <p class="copyright">&copy; all rights reserved</p>
+        </footer>
+
+        <script>
+            let name = 'joshua';
+
+            console.log(name, 'logged! log');
+            console.info(name, 'logged! info');
+            console.warn(name, 'logged! warn');
+            console.debug(name, 'logged! debug');
+            console.error(name, 'logged! error');
+
+            let form = document.querySelector('.signup-form');
+            console.log(form.childNodes); // returns array of its children
+
+            console.log(form.children[0]);
+
+            form.classList.add('-active');
+            console.log(form.className);
+
+            let copyright = document.querySelector('.copyright');
+            let text = document.createTextNode('Hello world');
+            let para = document.createElement('p');
+            para.classList.add('para');
+
+            para.appendChild(text);
+            let body = document.body;
+            body.insertBefore(para, copyright);
+        </script>
+    </div>
+</body>
+</html>

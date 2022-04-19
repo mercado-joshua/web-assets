@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        *::before,
+        *::after,
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .section > .title {
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 500;
+            color: #34506C;
+        }
+
+        .article {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .article > .description {
+            color: #7B8792;
+            font-size: 35px;
+            letter-spacing: 1px;
+            line-height: 1.3em;
+            padding: 0 7px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            border: none;
+            padding: 10px 17px;
+            font-size: 20px;
+            border-radius: 3px;
+            color: #fff;
+            background-color: #BE634E;
+
+            align-self: center;
+        }
+
+        @media (min-width: 800px) {
+
+          .article {
+              display: grid;
+              grid-template-columns: .75fr 100px 1fr;
+              /* so that you can add more text without breaking the layout */
+              grid-template-rows: 80px minmax(60px, auto) auto;
+          }
+
+          .article > .description {
+              grid-column: 1/span 2;
+              grid-row: 1/span 2;
+          }
+
+          .article > .cta-button {
+              grid-column: 1/span 2;
+              grid-row: 3/4;
+
+              align-self: flex-start;
+              justify-self: flex-start;
+          }
+
+          .article > .image {
+            grid-column: 2/span 2;
+            grid-row: 2/span 2;
+          }
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <h2 class="title">Articles</h2>
+        <article class="article">
+            <img class="image" src="article-bike.jpg" alt="">
+            <p class="description">Lorem, ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sint!</p>
+            <button class="cta-button">Get your bike</button>
+        </article>
+    </section>
+</body>
+</html>

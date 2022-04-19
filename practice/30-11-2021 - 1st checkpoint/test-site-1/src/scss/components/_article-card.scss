@@ -1,0 +1,19 @@
+@use '../abstracts';
+
+.article-card {
+    > .description {
+        text-align: center;
+    }
+
+    > .button-cta {
+        background-color: #CB5F49;
+    }
+
+    @include abstracts.set-breakpoint(600px) {
+        > .description {
+            text-align: left;
+            color: #10486C;
+            font-size: 1.3rem;
+        }
+    }
+}

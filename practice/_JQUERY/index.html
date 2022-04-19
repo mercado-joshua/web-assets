@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid red;
+            background-color: antiquewhite;
+            height: 100px;
+            width: 100px;
+            display: none;
+        }
+
+        .rel {
+            position: relative;
+        }
+
+        .animate {
+            display: block;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h2>hide elements</h2>
+    <p>item 1</p>
+    <p>item 2</p>
+    <p>item 3</p>
+    <p>item 4</p>
+    <h2>hide and show contents</h2>
+    <p class="test-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ipsam facere dolorum. Omnis praesentium earum eum atque accusamus dignissimos. Distinctio officia, dolorum nobis nihil minus magni voluptas vel ut reiciendis?</p>
+
+    <button class="show">show</button>
+    <button class="close">close</button>
+    <button class="toggle">toggle</button>
+
+    <h2>fade in</h2>
+    <div class="box div-1">fadeIn()</div>
+    <div class="box div-2">fadeIn(slow)</div>
+    <div class="box div-3">fadeIn(3000)</div>
+    <button class="fadeIn">fadeIn</button>
+
+    <h2>animate()</h2>
+    <button class="runAnimate">animate</button>
+    <div class="rel">
+        <div class="box animate">fadeIn()</div>
+    </div>
+
+    <h2>class manipulation</h2>
+    <p class="para-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex suscipit blanditiis molestias, magni odio ipsum ad eaque maiores quaerat laborum? Ipsam aliquam sunt vel dolores laboriosam at debitis nesciunt nam nemo perferendis, modi minus libero provident placeat sint dolorem dolor, quas molestiae minima? Et, unde! Quia culpa dolorum molestias, illo magnam rerum doloribus provident nemo accusantium ipsa? In possimus voluptatum, explicabo molestiae obcaecati illo minima nihil pariatur provident numquam, tenetur distinctio laudantium eveniet earum nobis! Natus, ullam deleniti iusto voluptas quasi ipsam et iure commodi dicta quod culpa. Dicta expedita nostrum vitae nihil distinctio quaerat ipsa commodi dignissimos hic minus.
+    </p>
+    <button class="changeCSS">change CSS</button>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){ // use the function after the document was fully loaded
+            init();
+        });
+
+        function init() {
+
+            // animation
+            // .show(speed, callback)
+            // .hide()
+            // .toggle()
+
+            // .fadeIn()
+            // .fadeOut()
+            // .fadeToggle()
+            // .fadeTo(speed, opacity, callback)
+
+            // slideUp()
+            // slideDown()
+            // slideToggle()
+
+            // animate()
+            // remember to set position: first
+
+            // .stop(stopAll, goToEnd)
+            // stopAll (default: false) - to stop current and queued animations
+            // goToEnd - complete the animation completely
+
+            $('.btn').on('click', function() {
+                $(this).animate({
+                    left: '350px',
+                    height: '+=300px',
+                    width: '-=100px'
+                },
+                'slow',
+                function() {
+                    alert('Please');
+                });
+
+                $(this).stop(); // to stop the animation/effect before its finished
+            });
+
+            // slow, fast, milliseconds
+
+            $('.btn').on('click', function() {
+                $(this).show('fast', function() {
+                    alert('hello world');
+                })
+            });
+        
+
+            // events
+            $('.btn').on('click', function() { // add event listeber
+
+                $(this).off('click'); // remove event listener
+                $(this).off(); // removes all  event listeners
+                $('h2').off();
+            });
+
+            // .dblclick()
+            // .focus()
+
+            // handling multiple events
+            $('.input').on({
+                focus: function() {
+                    $(this).css('color', 'red');
+                },
+                blur: function() {
+                    $(this).css('color', 'blue');
+                }
+            });
+            // this
+            $('p').click(function(){
+                $(this).hide();
+            });
+
+            // selectors & chaining
+            $('.show').click(function(){
+                $('.test-1').show().text('hellllo world');
+            });
+
+            $('.close').click(function(){
+                $('.test-1').hide();
+            });
+
+            $('.toggle').click(function(){
+                $('.test-1').toggle('fast', function() {
+                    alert('test');
+                });
+            });
+
+            // from invisible to visible
+            $('.fadeIn').click(function(){
+                $('.div-1').fadeIn();
+                $('.div-2').fadeIn('slow');
+                $('.div-3').fadeIn(5000);
+            });
+
+            // animate
+            $('.runAnimate').click(function(){
+                $('.animate').animate({
+                    left: '300px',
+                    top: '-600px'
+                });
+            });
+
+            // css
+            $('.changeCSS').click(function(){
+                $('.para-2').css('color', 'blue').css('background-color', 'red');
+            });
+        }
+    </script>
+</body>
+</html>

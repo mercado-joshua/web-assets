@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myForm">
+        <input type="text" name="firstname" value="hahaha">
+        <input type="text" name="lastname" value="hohohoh">
+        <input type="button" value="submit" class="js-submit">
+    </form>
+
+    <select name="" id="" onchange="selectBg(this.value)">
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+        <option value="red">red</option>
+    </select>
+
+    <script>
+        let form = document.forms.myForm;
+        let fname = form.elements.firstname.value;
+        let lname = form.elements.lastname.value;
+
+        console.log(fname);
+        console.log(lname);
+
+        function selectBg(x) {
+            document.bgColor = x;
+        }
+    </script>
+</body>
+</html>

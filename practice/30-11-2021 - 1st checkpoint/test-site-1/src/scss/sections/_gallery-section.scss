@@ -1,0 +1,24 @@
+@use '../abstracts';
+
+.gallery-section {
+    padding: 3em 0;
+}
+
+.gallery {
+    > .title {
+        color: #10486C;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+    }
+
+    > .image + .image {
+        margin-top: 1em;
+    }
+
+    @include abstracts.set-breakpoint(600px) {
+        > .image + .image {
+            margin-top: 0;
+        } 
+    }
+}

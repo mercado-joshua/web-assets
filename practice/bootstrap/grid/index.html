@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <!--
+        col-1 to 12
+
+        container - max-width, margin: 0 auto
+
+        row
+
+        col-sm-1 to 12 - they will be stacked at "sm" breakpoint
+        col-sm
+        col-md
+        col-lg
+        col-xl
+
+        align-items-start
+        align-items-center
+        align-items-end
+
+        align-self-start
+        align-self-center
+        align-self-end
+
+        justify-content-start
+        justify-content-end
+        justify-content-center
+        justify-content-evenly
+        justify-content-between
+        justify-content-around
+
+        order-1 to 6
+
+        order-first = -1
+        order-last = 6
+
+        offset-sm-1 to 12 - margin left by columns
+        offset-sm-0 = resets
+
+        use .clearfix to the parent when using float
+
+    -->
+    <h2>flex Grid</h2>
+    <div class="container">
+        <div class="column p-4">
+            <div class="row gy-5">
+                <div class="col bg-warning p-3">Row</div>
+                <div class="col bg-info p-3">Row</div>
+                <div class="col bg-primary p-3">Row</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <div class="col bg-dark">Row</div>
+                <div class="col bg-light">Row</div>
+                <div class="col bg-primary">Row</div>
+                <div class="col bg-light">Row</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row">
+                <div class="col-11 bg-dark">Row</div>
+                <div class="col bg-light">Row</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row">
+                <div class="col-8 bg-info">Row</div>
+                <div class="col-4 bg-primary">Row</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row">
+                <div class="col-sm-5 bg-warning">Row</div>
+                <div class="col-sm-7 bg-dark">Row</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row">
+                <div class="col-sm bg-primary">Row</div>
+                <div class="col-sm bg-info">Row</div>
+                <div class="col-sm bg-light">Row</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row">
+                <div class="col-4 col-sm-2 col-md-3 col-lg-1 col-xl-3 bg-primary">Row</div>
+                <div class="col-4 col-sm-6 col-md-6 col-lg-2 col-xl-8 bg-info">Row</div>
+                <div class="col-4 col-sm-4 col-md-3 col-lg-9 col-xl-1 bg-light">Row</div>
+            </div>
+        </div>
+
+        <h2>not working</h2>
+        <div class="column">
+            <div class="row row-cols-2">
+              <div class="col bg-primary">Column</div>
+              <div class="col bg-warning">Column</div>
+              <div class="col bg-info">Column</div>
+              <div class="col bg-dark">Column</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row row-cols-3">
+              <div class="col bg-primary">Column</div>
+              <div class="col bg-warning">Column</div>
+              <div class="col bg-info">Column</div>
+              <div class="col bg-dark">Column</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row row-cols-4">
+              <div class="col bg-primary">Column</div>
+              <div class="col bg-warning">Column</div>
+              <div class="col bg-info">Column</div>
+              <div class="col bg-dark">Column</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="row">
+                <div class="col-sm-2 bg-primary">Column</div>
+                <div class="col-sm-4 offset-sm-6 bg-warning">Column</div>
+            </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

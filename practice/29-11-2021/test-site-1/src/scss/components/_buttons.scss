@@ -1,0 +1,11 @@
+@use '../abstracts';
+
+.button-cta {
+    display: inline-block;
+    border: .1em solid abstracts.$color-primary;
+    border-radius: 1.2em;
+    padding: .3em .7em;
+    font-size: 1.1rem;
+    color: abstracts.$color-primary;
+    background-color: transparent;
+}

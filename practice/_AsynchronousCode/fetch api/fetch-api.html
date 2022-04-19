@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *::before,
+        *::after,
+        * {
+            box-sizing: border-box;
+            outline: 1px dashed blue;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .image {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+            gap: 1em;
+
+            padding: 0 2em;
+        }
+    </style>
+</head>
+<body>
+    <h2>fake store api</h2>
+    <div class="gallery">
+    </div>
+    <script>
+        function getText() {
+            fetch('text.txt')
+                .then(response => response.text())
+                .then(text => console.log(text)) // recieves the physical text
+                .catch(error => console.error(error));
+        }
+
+        // getText();
+
+        function createImage(source) {
+            const image = document.createElement('img');
+            image.classList.add('image');
+            image.src = source;
+            return image;
+        }
+
+        function createTitle(source) {
+            const title = document.createElement('h3');
+            title.classList.add('title');
+            title.textContent = source;
+            return title;
+        }
+
+        function createDescription(source) {
+            const title = document.createElement('p');
+            title.classList.add('description');
+            title.textContent = source;
+            return title;
+        }
+
+        function createCard(container, product) {
+            const parent = document.querySelector(container);
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            card.appendChild(createImage(product.image));
+            card.appendChild(createTitle(product.title));
+            card.appendChild(createDescription(product.description));
+
+            parent.appendChild(card);
+        }
+        
+        function getProducts() {
+            fetch('https://fakestoreapi.com/products?limit=5')
+            .then(res => res.json())
+            .then(json => {
+                console.log(json);
+
+                json.forEach(element => {
+                    createCard('.gallery', element);
+                });
+            });
+        }
+
+        getProducts();
+    </script>
+</body>
+</html>

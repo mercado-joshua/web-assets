@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// generators - simply a function can be paused
+
+// allows towrite acode in a asynchronous fashion
+
+/*
+Syntax:
+
+function* name() {
+
+    const variable = yield value;
+
+    const numOne = yield 1;
+    const numTwo = yield 2;
+}
+
+// setup the generator
+const gen = numbersGen();
+
+// to get the values from the generator
+
+gen.next() - an object
+gen.next().value - represent value you yield
+gen.next().done - a boolean represents whether your generator are simply finished
+*/
+
+const getNumbers = function*(){
+    yield 1;
+    yield "hello";
+    yield true;
+    yield {
+        name: "alex"
+    };
+
+    return "I am done";
+}
+
+// use the generator
+const numberGen = getNumbers();
+
+// now traverse only ONCE inside of the function,line by line
+// console.log(numberGen.next());
+// console.log(numberGen.next());
+// console.log(numberGen.next());
+// console.log(numberGen.next());
+// console.log(numberGen.next());
+
+console.log(numberGen.next().value);
+console.log(numberGen.next().value);
+console.log(numberGen.next().value);
+console.log(numberGen.next().value);
+console.log(numberGen.next().value);
+
+
+</script>
+</body>
+</html>
